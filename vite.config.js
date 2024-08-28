@@ -5,9 +5,10 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "./clickbaitz-re",
+  base: "./",
   resolve: {
     alias: {
+      // eslint-disable-next-line no-undef
       "@": path.resolve(__dirname, "./src"),
     },
   },
