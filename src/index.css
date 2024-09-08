@@ -81,3 +81,12 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+.text-theme {
+  color: #fdd034;
+}
+.bg-theme {
+  background-color: #fdd034;
+}
+.border-theme {
+  border-color: #fdd034;
+}
