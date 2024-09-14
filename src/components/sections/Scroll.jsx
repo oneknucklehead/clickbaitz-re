@@ -1,18 +1,30 @@
 import React, { useEffect, useState } from "react";
 import {
-  Link,
+  Link as LinkScroll,
   Button,
   Element,
   Events,
   animateScroll as scroll,
   scrollSpy,
 } from "react-scroll";
-import imgUrl1 from "../../assets/reputation/pic1.jpg";
-import imgUrl2 from "../../assets/reputation/pic2.jpg";
-import imgUrl3 from "../../assets/reputation/pic1.JPG";
-import imgUrl4 from "../../assets/reputation/pic2.JPG";
+import buttonDetails from "@/data/buttonDetailsReputation";
+import { Link } from "react-router-dom";
 const ScrollSection = () => {
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState(
+    buttonDetails[buttonDetails.length - 1].img
+  );
+  const [imageIndex, setImageIndex] = useState(
+    buttonDetails[buttonDetails.length - 1].index
+  );
+  const [imageLink, setImageLink] = useState(
+    buttonDetails[buttonDetails.length - 1].link
+  );
+  const [imageClientName, setImageClientName] = useState(
+    buttonDetails[buttonDetails.length - 1].clientName
+  );
+  const [imageClientWork, setImageClientWork] = useState(
+    buttonDetails[buttonDetails.length - 1].work
+  );
   useEffect(() => {
     Events.scrollEvent.register("begin", (to, element) => {
       console.log("begin", to, element);
@@ -29,204 +41,170 @@ const ScrollSection = () => {
       Events.scrollEvent.remove("end");
     };
   }, []);
-
-  const buttonDetails = [
-    {
-      tagline: "Growth",
-      logo: (
-        <svg
-          width="25"
-          height="18"
-          viewBox="0 0 34 22"
-          fill="#ododod"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.85811 21.4688L12.9057 11.8436L18.4537 17.7458C19.1536 18.4904 20.2803 18.4541 20.929 17.6732L33.1688 3.01747C33.7662 2.3092 33.7321 1.21955 33.1005 0.529445C32.4176 -0.196985 31.2739 -0.178825 30.6252 0.602088L19.7169 13.6415L14.1006 7.66662C13.4348 6.95835 12.3594 6.95835 11.6936 7.66662L1.29748 18.7447C0.631716 19.453 0.631716 20.5971 1.29748 21.3054L1.45112 21.4688C2.11688 22.1771 3.20941 22.1771 3.85811 21.4688Z"
-            fill="#ododod"
-          />
-        </svg>
-      ),
-      img: imgUrl1,
-      clientName: "Chamak Apparel",
-      work: "Growth 45%",
-    },
-    {
-      tagline: "Creativity",
-      logo: (
-        <svg
-          width="25"
-          height="20"
-          viewBox="0 0 33 20"
-          fill="#ododod"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M16.4109 19.5C9.34195 19.5 3.3232 15.5533 0.814016 10C3.3232 4.44665 9.34195 0.5 16.4109 0.5C23.4799 0.5 29.4987 4.44666 32.0079 10C29.4987 15.5533 23.4799 19.5 16.4109 19.5ZM8.57288 10C8.57288 14.0002 12.1304 17.1667 16.4109 17.1667C20.6915 17.1667 24.249 14.0002 24.249 10C24.249 5.99979 20.6915 2.83333 16.4109 2.83333C12.1304 2.83333 8.57288 5.99979 8.57288 10ZM12.5081 10C12.5081 8.10687 14.2046 6.5 16.4109 6.5C18.6173 6.5 20.3138 8.10687 20.3138 10C20.3138 11.8931 18.6173 13.5 16.4109 13.5C14.2046 13.5 12.5081 11.8931 12.5081 10Z"
-            stroke="#ododod"
-          />
-        </svg>
-      ),
-      img: imgUrl2,
-      clientName: "Transcon",
-      work: "Growth 45%",
-    },
-    {
-      tagline: "Conversion",
-      logo: (
-        <svg
-          width="20"
-          height="18"
-          viewBox="0 0 20 18"
-          fill="#ododod"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M17 18C16.35 18 15.7667 17.8127 15.25 17.438C14.7333 17.0627 14.375 16.5833 14.175 16H9C7.9 16 6.95833 15.6083 6.175 14.825C5.39167 14.0417 5 13.1 5 12C5 10.9 5.39167 9.95833 6.175 9.175C6.95833 8.39167 7.9 8 9 8H11C11.55 8 12.021 7.804 12.413 7.412C12.8043 7.02067 13 6.55 13 6C13 5.45 12.8043 4.979 12.413 4.587C12.021 4.19567 11.55 4 11 4H5.825C5.60833 4.58333 5.246 5.06267 4.738 5.438C4.22933 5.81267 3.65 6 3 6C2.16667 6 1.45833 5.70833 0.875 5.125C0.291667 4.54167 0 3.83333 0 3C0 2.16667 0.291667 1.45833 0.875 0.875C1.45833 0.291667 2.16667 0 3 0C3.65 0 4.22933 0.187333 4.738 0.562C5.246 0.937333 5.60833 1.41667 5.825 2H11C12.1 2 13.0417 2.39167 13.825 3.175C14.6083 3.95833 15 4.9 15 6C15 7.1 14.6083 8.04167 13.825 8.825C13.0417 9.60833 12.1 10 11 10H9C8.45 10 7.97933 10.1957 7.588 10.587C7.196 10.979 7 11.45 7 12C7 12.55 7.196 13.021 7.588 13.413C7.97933 13.8043 8.45 14 9 14H14.175C14.3917 13.4167 14.7543 12.9373 15.263 12.562C15.771 12.1873 16.35 12 17 12C17.8333 12 18.5417 12.2917 19.125 12.875C19.7083 13.4583 20 14.1667 20 15C20 15.8333 19.7083 16.5417 19.125 17.125C18.5417 17.7083 17.8333 18 17 18ZM3 4C3.28333 4 3.521 3.90433 3.713 3.713C3.90433 3.521 4 3.28333 4 3C4 2.71667 3.90433 2.479 3.713 2.287C3.521 2.09567 3.28333 2 3 2C2.71667 2 2.479 2.09567 2.287 2.287C2.09567 2.479 2 2.71667 2 3C2 3.28333 2.09567 3.521 2.287 3.713C2.479 3.90433 2.71667 4 3 4Z"
-            fill="#ododod"
-          />
-        </svg>
-      ),
-      img: imgUrl3,
-      clientName: "alahyan ",
-      work: "Conversion 45%",
-    },
-    {
-      tagline: "Branding",
-      logo: (
-        <svg
-          width="21"
-          height="17"
-          viewBox="0 0 22 18"
-          fill="#ododod"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M20.5473 10.1829H17.9898C17.6274 10.1829 17.3237 10.0696 17.0786 9.84283C16.8335 9.6161 16.711 9.33516 16.711 9C16.711 8.66484 16.8335 8.3839 17.0786 8.15717C17.3237 7.93045 17.6274 7.81709 17.9898 7.81709H20.5473C20.9096 7.81709 21.2133 7.93045 21.4584 8.15717C21.7035 8.3839 21.8261 8.66484 21.8261 9C21.8261 9.33516 21.7035 9.6161 21.4584 9.84283C21.2133 10.0696 20.9096 10.1829 20.5473 10.1829ZM14.9207 14.678C15.1338 14.402 15.4109 14.2442 15.7519 14.2048C16.0929 14.1654 16.4126 14.2442 16.711 14.4414L18.757 15.8609C19.0554 16.058 19.2259 16.3143 19.2685 16.6298C19.3112 16.9452 19.2259 17.241 19.0128 17.517C18.7996 17.793 18.5226 17.9507 18.1816 17.9901C17.8406 18.0296 17.5209 17.9507 17.2225 17.7536L15.1765 16.3341C14.8781 16.1369 14.7076 15.8806 14.6649 15.5652C14.6223 15.2497 14.7076 14.954 14.9207 14.678ZM18.757 2.1391L16.711 3.5586C16.4126 3.75575 16.0929 3.83461 15.7519 3.79518C15.4109 3.75575 15.1338 3.59803 14.9207 3.32202C14.7076 3.046 14.6223 2.75027 14.6649 2.43483C14.7076 2.11939 14.8781 1.86309 15.1765 1.66594L17.2225 0.24644C17.5209 0.0492881 17.8406 -0.0295728 18.1816 0.00985761C18.5226 0.0492881 18.7996 0.20701 19.0128 0.483023C19.2259 0.759036 19.3112 1.05476 19.2685 1.37021C19.2259 1.68565 19.0554 1.94195 18.757 2.1391ZM5.20203 12.5487H1.36572C1.0034 12.5487 0.69969 12.4354 0.454592 12.2087C0.209494 11.9819 0.0869446 11.701 0.0869446 11.3658V6.63417C0.0869446 6.29901 0.209494 6.01807 0.454592 5.79135C0.69969 5.56462 1.0034 5.45126 1.36572 5.45126H5.20203L9.42198 1.54764C9.82693 1.17306 10.2905 1.08927 10.8126 1.29628C11.3348 1.50329 11.5959 1.87295 11.5959 2.40526V15.5947C11.5959 16.1271 11.3348 16.4967 10.8126 16.7037C10.2905 16.9107 9.82693 16.8269 9.42198 16.4524L5.20203 12.5487ZM9.03835 5.27382L6.28899 7.81709H2.64449V10.1829H6.28899L9.03835 12.7262V5.27382Z"
-            fill="#ododod"
-          />
-        </svg>
-      ),
-      img: imgUrl4,
-      clientName: "clickbaitz Apparel",
-      work: "Branding 45%",
-    },
-  ];
+  const handleMainImage = (button) => {
+    setImage(button.img);
+    setImageIndex(button.index);
+    setImageLink(button.link);
+    setImageClientName(button.clientName);
+    setImageClientWork(button.work);
+  };
 
   return (
     <div className="relative grid grid-cols-12 text-white">
       {/* Left Navigation with sticky positioning */}
       <div className="col-span-1">
-        <ul className="flex gap-1 sticky p-4 top-0 flex-col text-theme text-xs">
-          <Link
+        <ul className="flex gap-1 sticky pl-4 pt-4 pr-2 top-0 flex-col text-theme text-xs">
+          <LinkScroll
             id="reputation-anchor"
             to="reputation"
-            className="cursor-pointer transition-all"
-            activeClass="font-semibold border-l-2 transition-all pl-2 border-theme"
+            className="cursor-pointer transition-all  border-transparent hover:font-semibold hover:pl-2"
+            activeClass="font-semibold border-l-2 transition-all pl-2 border-transparent border-theme"
             spy={true}
             smooth={true}
-            duration={500}
+            duration={100}
           >
             Our Reputation
-          </Link>
-          <Link
+          </LinkScroll>
+          <LinkScroll
             id="model-anchor"
-            className="cursor-pointer	transition-all"
+            className="cursor-pointer	transition-all  border-transparent hover:font-semibold hover:pl-2"
             to="model"
-            activeClass="font-semibold border-l-2 transition-all pl-2 border-theme"
+            activeClass="font-semibold border-l-2 transition-all pl-2 border-transparent border-theme"
             spy={true}
             smooth={true}
-            duration={500}
+            duration={100}
           >
             Our Model
-          </Link>
-          <Link
+          </LinkScroll>
+          <LinkScroll
             id="services-anchor"
-            className="cursor-pointer	transition-all"
+            className="cursor-pointer	transition-all  border-transparent hover:font-semibold hover:pl-2"
             to="services"
-            activeClass="font-semibold border-l-2 transition-all pl-2 border-theme"
+            activeClass="font-semibold border-l-2 transition-all pl-2 border-transparent border-theme"
             spy={true}
             smooth={true}
-            duration={500}
+            duration={100}
           >
             Our Services
-          </Link>
+          </LinkScroll>
         </ul>
       </div>
 
       {/* Right Content Area */}
       <div className="col-span-11">
-        <div className="min-h-screen w-full" id="reputation">
+        <div className="py-24 px-8 w-full" id="reputation">
           <h1 className="text-5xl text-theme">Lorem ipsum dolor sit amet</h1>
-          <h3 className="text-4xl font-light">drive business growth.</h3>
-          <div className="grid grid-cols-2">
-            <div>
+          <h3 className="text-4xl py-4 font-light">drive business growth.</h3>
+          <div className="h-full">
+            <div className="grid grid-cols-2">
               <div>
-                <p className="text-theme text-xl font-light">
-                  Trusted campaigns
-                </p>
-                <div className="py-4">
-                  <h1 className="text-theme text-6xl font-semibold">
-                    Click Baitz
-                  </h1>
-                  <h3 className="text-theme text-4xl ">Agency</h3>
+                <div className="pt-12">
+                  <p className="text-theme text-xl font-light">
+                    Trusted campaigns
+                  </p>
+                  <div className="py-4">
+                    <h1 className="text-theme text-6xl font-semibold">
+                      Click Baitz
+                    </h1>
+                    <h3 className="text-theme text-4xl ">Agency</h3>
+                  </div>
                 </div>
-              </div>
-              <div className="pb-4">
-                <p>
-                  Believe in Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-              </div>
-              <div>
-                <button className="bg-theme text-black font-semibold flex gap-2 items-center py-2 px-4 rounded-lg">
-                  <p>See examples of our works</p>
-                  <span>
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11.182 1.18201C11.182 0.629723 10.7343 0.182008 10.182 0.182008L1.18201 0.182007C0.629723 0.182007 0.182008 0.629722 0.182008 1.18201C0.182008 1.73429 0.629723 2.18201 1.18201 2.18201L9.18201 2.18201L9.18201 10.182C9.18201 10.7343 9.62972 11.182 10.182 11.182C10.7343 11.182 11.182 10.7343 11.182 10.182L11.182 1.18201ZM1.70711 11.0711L10.8891 1.88911L9.4749 0.474901L0.292893 9.65691L1.70711 11.0711Z"
-                        fill="black"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
-            <div>
-              <div className="grid grid-cols-2">
-                {/* IMAGES */}
-                <div>
-                  <img src={image} />
+                <div className="pb-4">
+                  <p>
+                    Believe in Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Believe in Lorem ipsum dolor sit
+                    amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                  </p>
                 </div>
-                {/* BUTTONS */}
-                <div className="w-full flex flex-col gap-3">
-                  {buttonDetails.map((button, index) => (
-                    <div key={index}>
-                      <button
-                        onClick={() => setImage(button.img)}
-                        className="rounded-lg w-full p-4 bg-theme text-black flex items-center gap-2"
+                <div className="my-2">
+                  <button className="bg-theme text-black font-semibold flex gap-2 items-center py-2 px-4 rounded-lg">
+                    <p>See examples of our works</p>
+                    <span>
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <span className="">{button.logo}</span>
-                        <span className="text-xl">{button.tagline}</span>
-                      </button>
+                        <path
+                          d="M11.182 1.18201C11.182 0.629723 10.7343 0.182008 10.182 0.182008L1.18201 0.182007C0.629723 0.182007 0.182008 0.629722 0.182008 1.18201C0.182008 1.73429 0.629723 2.18201 1.18201 2.18201L9.18201 2.18201L9.18201 10.182C9.18201 10.7343 9.62972 11.182 10.182 11.182C10.7343 11.182 11.182 10.7343 11.182 10.182L11.182 1.18201ZM1.70711 11.0711L10.8891 1.88911L9.4749 0.474901L0.292893 9.65691L1.70711 11.0711Z"
+                          fill="black"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div>
+                <div className="grid grid-cols-2 h-full gap-5">
+                  {/* IMAGES */}
+                  <div className="col-span-1 relative flex justify-center items-center">
+                    <img
+                      src={image}
+                      className=" rounded-lg absolute w-full h-full object-cover"
+                    />
+                    <div className="absolute rounded-lg inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-70"></div>
+
+                    {/* Content */}
+                    <div className="transition-all absolute inset-0 bottom-6 flex flex-col items-center justify-end px-6">
+                      <p className="">{imageClientName}</p>
+                      <h1 className="text-white text-center text-3xl font-bold">
+                        {imageClientWork}
+                      </h1>
                     </div>
-                  ))}
+                    <div className="absolute top-0 w-full flex justify-between p-5">
+                      <div className="">
+                        <p>{imageIndex}.</p>
+                      </div>
+                      <Link
+                        to={imageLink}
+                        className="border-2 p-2 rounded-full cursor-pointer"
+                      >
+                        <svg
+                          width="12"
+                          height="13"
+                          viewBox="0 0 12 13"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.0001 1.53784C12.0001 0.985556 11.5524 0.537841 11.0001 0.537841L2.00012 0.537842C1.44784 0.537841 1.00012 0.985556 1.00012 1.53784C1.00012 2.09013 1.44784 2.53784 2.00012 2.53784L10.0001 2.53784L10.0001 10.5378C10.0001 11.0901 10.4478 11.5378 11.0001 11.5378C11.5524 11.5378 12.0001 11.0901 12.0001 10.5378L12.0001 1.53784ZM1.70723 12.2449L11.7072 2.24495L10.293 0.830735L0.293015 10.8307L1.70723 12.2449Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                  {/* BUTTONS */}
+                  <div className=" col-span-1 w-full flex flex-col-reverse justify-center gap-3">
+                    {buttonDetails.map((button, index) => (
+                      <div key={index}>
+                        <button
+                          onClick={() => handleMainImage(button)}
+                          className={`rounded-lg w-full p-4 ${button.color} transition-all hover:opacity-90 text-black flex items-center gap-2`}
+                        >
+                          <span
+                            dangerouslySetInnerHTML={{ __html: button.logo }}
+                          />
+                          <span className="text-xl font-semibold">
+                            {button.tagline}
+                          </span>
+                        </button>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="min-h-screen bg-slate-500 w-full" id="model">
+        <div className="min-h-screen py-24 bg-slate-500 w-full" id="model">
           Model
         </div>
-        <div className="min-h-screen bg-red-500 w-full" id="services">
+        <div className="min-h-screen py-24 bg-red-500 w-full" id="services">
           Services
         </div>
       </div>
