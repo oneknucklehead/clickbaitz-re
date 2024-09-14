@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import {
   Link as LinkScroll,
-  Button,
-  Element,
   Events,
   animateScroll as scroll,
   scrollSpy,
 } from "react-scroll";
 import buttonDetails from "@/data/buttonDetailsReputation";
 import { Link } from "react-router-dom";
+import models from "@/data/models";
+import ModelElement from "../custom/ModelElement";
+import ModelCard, { Colors, SchedulingLinks, Team } from "../custom/ModelCard";
 const ScrollSection = () => {
   const [image, setImage] = useState(
     buttonDetails[buttonDetails.length - 1].img
@@ -202,7 +203,32 @@ const ScrollSection = () => {
           </div>
         </div>
         <div className="min-h-screen py-24 bg-slate-500 w-full" id="model">
-          Model
+          <div className="flex w-full items-start gap-20">
+            <div className="w-full py-[50vh]">
+              <div>
+                <ul>
+                  {models.map((model, index) => (
+                    <li key={index}>
+                      <ModelElement id={model.index}>
+                        <p>{model.index}.</p>
+                        <h1 className="py-4 font-heading text-5xl">
+                          {model.title}
+                        </h1>
+                        <p>{model.description}</p>
+                      </ModelElement>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="sticky top-0 flex h-screen w-full items-center">
+              <div className="relative aspect-square w-full bg-gray-100">
+                {models.map((model, index) => (
+                  <model.color key={index} id={model.index}></model.color>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
         <div className="min-h-screen py-24 bg-red-500 w-full" id="services">
           Services
