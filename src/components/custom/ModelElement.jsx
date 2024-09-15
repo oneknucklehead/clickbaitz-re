@@ -12,7 +12,7 @@ const ModelElement = ({ children, id }) => {
   useEffect(() => {
     if (isInView) setInViewModel(id);
     if (!isInView && inViewModel === id) setInViewModel(null);
-  }, [isInView, id, setInViewModel]);
+  }, [isInView, id, setInViewModel, inViewModel]);
   return (
     <div
       ref={ref}
