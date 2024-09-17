@@ -1,17 +1,12 @@
 import * as React from "react";
-
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Link } from "react-router-dom";
-
 import { motion } from "framer-motion";
 import logo from "../../assets/logo.png";
 
@@ -23,14 +18,8 @@ export function DrawerComponent() {
   };
 
   const menuItems = [
-    {
-      name: "Case Studies",
-      subOptions: ["Option 1", "Option 2"],
-    },
-    {
-      name: "Services",
-      subOptions: ["Option 1", "Option 2", "Option 3"],
-    },
+    { name: "Case Studies" },
+    { name: "Services" },
     {
       name: "About",
       subOptions: ["Our Ecosystem", "Our Thesis", "Darkmatter"],
@@ -43,15 +32,13 @@ export function DrawerComponent() {
       name: "Education",
       subOptions: ["Option 1", "Option 2", "Option 3"],
     },
-    {
-      name: "Pricing",
-      subOptions: ["Option 1", "Option 2"],
-    },
+    { name: "Pricing" },
   ];
+
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <button className="bg-white/5  p-4 h-full rounded-sm">
+        <button className="bg-white/5 p-4 h-full rounded-sm">
           <svg
             width="18"
             height="12"
@@ -66,65 +53,90 @@ export function DrawerComponent() {
           </svg>
         </button>
       </DrawerTrigger>
+
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
           <DrawerFooter>
-            {/* <h1 className="text-4xl font-semibold">Clickbaitz</h1> */}
             <h1 className="text-4xl font-semibold">
               <Link to={"/"}>
                 <img src={logo} className="h-[35px]" alt="Clickbaitz Logo" />
               </Link>
             </h1>
             <DrawerClose asChild>
-              <button className="bg-theme border-2 border-yellow-800 rounded-full w-fit p-3">
+              <button className="bg-white/10 rounded-full w-fit p-3">
                 <svg
-                  width="20"
-                  height="20"
+                  width="15"
+                  height="15"
                   viewBox="0 0 40 40"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     d="M5.6 40L0 34.4L14.4 20L0 5.70001L5.6 0.100006L20 14.5L34.3 0.100006L39.9 5.70001L25.5 20L39.9 34.4L34.3 40L20 25.6L5.6 40Z"
-                    fill="black"
+                    fill="#FDD034"
                   />
                 </svg>
               </button>
             </DrawerClose>
           </DrawerFooter>
-          <DrawerHeader>
-            <DrawerTitle>Move Goal</DrawerTitle>
-            <DrawerDescription>Set your daily activity goal.</DrawerDescription>
-          </DrawerHeader>
-          <div className="w-64 p-4 bg-[#201f1f] text-white font-sans">
+
+          <div className="bg-[#201f1f] p-4 text-white">
             {menuItems.map((item, index) => (
               <div key={index}>
                 <div
-                  className={`cursor-pointer p-2 text-lg transition-colors duration-300 ${
-                    activeIndex === index
-                      ? "text-theme"
-                      : "text-white hover:bg-gray-700"
-                  }`}
+                  className="cursor-pointer w-fit transition-all flex items-center gap-2"
                   onClick={() => toggleMenu(index)}
                 >
-                  {item.name}
+                  <div
+                    className={`p-2 text-2xl hover:text-white transition-all duration-300 ${
+                      activeIndex === index ? "text-white" : "text-white/50"
+                    }`}
+                  >
+                    {item.name}
+                  </div>
+                  {item.subOptions && (
+                    <div
+                      className={`border p-1 rounded-full transition-all duration-300 ${
+                        activeIndex === index
+                          ? "rotate-0"
+                          : "rotate-45 border-white/50"
+                      }`}
+                    >
+                      <svg
+                        width="7"
+                        height="7"
+                        viewBox="0 0 40 40"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.6 40L0 34.4L14.4 20L0 5.70001L5.6 0.100006L20 14.5L34.3 0.100006L39.9 5.70001L25.5 20L39.9 34.4L34.3 40L20 25.6L5.6 40Z"
+                          fill={`${
+                            activeIndex === index ? "white" : "#ffffff80"
+                          }
+                            `}
+                        />
+                      </svg>
+                    </div>
+                  )}
                 </div>
-                {activeIndex === index && (
+                {activeIndex === index && item.subOptions && (
                   <motion.div
-                    className="pl-6"
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    {item.subOptions.map((subOption, subIndex) => (
-                      <div
-                        key={subIndex}
-                        className="text-yellow-400 text-base py-1 cursor-pointer transition-colors duration-300 hover:text-yellow-300"
-                      >
-                        {subOption}
-                      </div>
-                    ))}
+                    <ul className="pl-4 space-y-2">
+                      {item.subOptions.map((subOption, subIndex) => (
+                        <li
+                          key={subIndex}
+                          className=" cursor-pointer w-fit text-white transition-colors duration-300 hover:text-yellow-300"
+                        >
+                          {subOption}
+                        </li>
+                      ))}
+                    </ul>
                   </motion.div>
                 )}
               </div>
