@@ -12,9 +12,42 @@ import {
 } from "@/components/ui/drawer";
 import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion";
 import logo from "../../assets/logo.png";
 
 export function DrawerComponent() {
+  const [activeIndex, setActiveIndex] = React.useState(null);
+
+  const toggleMenu = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
+
+  const menuItems = [
+    {
+      name: "Case Studies",
+      subOptions: ["Option 1", "Option 2"],
+    },
+    {
+      name: "Services",
+      subOptions: ["Option 1", "Option 2", "Option 3"],
+    },
+    {
+      name: "About",
+      subOptions: ["Our Ecosystem", "Our Thesis", "Darkmatter"],
+    },
+    {
+      name: "Careers",
+      subOptions: ["Option 1", "Option 2"],
+    },
+    {
+      name: "Education",
+      subOptions: ["Option 1", "Option 2", "Option 3"],
+    },
+    {
+      name: "Pricing",
+      subOptions: ["Option 1", "Option 2"],
+    },
+  ];
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -43,7 +76,7 @@ export function DrawerComponent() {
               </Link>
             </h1>
             <DrawerClose asChild>
-              <button className="border-2 rounded-full w-fit p-3">
+              <button className="bg-theme border-2 border-yellow-800 rounded-full w-fit p-3">
                 <svg
                   width="20"
                   height="20"
@@ -63,6 +96,40 @@ export function DrawerComponent() {
             <DrawerTitle>Move Goal</DrawerTitle>
             <DrawerDescription>Set your daily activity goal.</DrawerDescription>
           </DrawerHeader>
+          <div className="w-64 p-4 bg-[#201f1f] text-white font-sans">
+            {menuItems.map((item, index) => (
+              <div key={index}>
+                <div
+                  className={`cursor-pointer p-2 text-lg transition-colors duration-300 ${
+                    activeIndex === index
+                      ? "text-theme"
+                      : "text-white hover:bg-gray-700"
+                  }`}
+                  onClick={() => toggleMenu(index)}
+                >
+                  {item.name}
+                </div>
+                {activeIndex === index && (
+                  <motion.div
+                    className="pl-6"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {item.subOptions.map((subOption, subIndex) => (
+                      <div
+                        key={subIndex}
+                        className="text-yellow-400 text-base py-1 cursor-pointer transition-colors duration-300 hover:text-yellow-300"
+                      >
+                        {subOption}
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </DrawerContent>
     </Drawer>

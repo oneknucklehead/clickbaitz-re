@@ -8,6 +8,7 @@ import { DrawerComponent } from "@/components/custom/Sidebar";
 import Navbar from "@/components/custom/Navbar";
 import ScrollSection from "@/components/sections/Scroll";
 import FAQSection from "@/components/sections/FAQ";
+import Footer from "@/components/sections/Footer";
 
 const Home = () => {
   const [navbarHeight, setNavbarHeight] = useState(80);
@@ -37,6 +38,7 @@ const Home = () => {
       </div>
       <ScrollSection />
       <FAQSection />
+      <Footer></Footer>
     </div>
   );
 };

@@ -6,7 +6,7 @@ const FAQSection = () => {
   const [selectedQuestion, setSelectedQuestion] = useState(faqData[0]);
 
   return (
-    <div className="text-white p-8">
+    <div className="max-w-screen-2xl mx-auto text-white p-8">
       <div className="grid lg:grid-cols-2 gap-8 p-8">
         {/* Left hand side: FAQ Questions */}
         <div className="col-span-1">
@@ -20,7 +20,7 @@ const FAQSection = () => {
             {faqData.map((faq) => (
               <li
                 key={faq.id}
-                className={`cursor-pointer py-4 border-b border-theme transition-all duration-300 ${
+                className={`cursor-pointer py-4 border-b-2 border-theme transition-all duration-300 ${
                   selectedQuestion.id === faq.id
                     ? "border-b-2 border-theme pl-4 opacity-100"
                     : "opacity-50"
