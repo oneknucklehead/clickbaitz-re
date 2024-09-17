@@ -131,7 +131,7 @@ export function DrawerComponent() {
                       {item.subOptions.map((subOption, subIndex) => (
                         <li
                           key={subIndex}
-                          className=" cursor-pointer w-fit text-white transition-colors duration-300 hover:text-yellow-300"
+                          className=" cursor-pointer w-fit text-white transition-all duration-300 hover:text-yellow-300"
                         >
                           {subOption}
                         </li>
