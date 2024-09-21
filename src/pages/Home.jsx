@@ -18,7 +18,6 @@ const Home = () => {
     if (navbarRef.current) {
       setNavbarHeight(navbarRef.current.clientHeight); // Set the navbar height dynamically
     }
-    console.log("navbar heingt:" + navbarHeight);
   }, []);
 
   return (

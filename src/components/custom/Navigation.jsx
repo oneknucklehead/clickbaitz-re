@@ -83,7 +83,7 @@ export function NavigationMenuComponent() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link to={"/casestudies"}>
+          <Link to={"/case-studies"}>
             <NavigationMenuTrigger>Case Studies</NavigationMenuTrigger>
           </Link>
           <NavigationMenuContent>

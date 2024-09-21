@@ -90,3 +90,6 @@ body {
 .border-theme {
   border-color: #fdd034;
 }
+.stroke-theme {
+  -webkit-text-stroke: 2px #fdd034;
+}
