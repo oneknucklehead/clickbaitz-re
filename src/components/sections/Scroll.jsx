@@ -26,6 +26,14 @@ import ModelCard, { Colors, SchedulingLinks, Team } from "../custom/ModelCard";
 
 import services from "@/data/serviceItems";
 import ServiceCard from "../custom/ServiceCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../ui/carousel";
+import TabComponent from "../custom/TabComponent";
 
 const ScrollSection = () => {
   const [image, setImage] = useState(
@@ -75,10 +83,10 @@ const ScrollSection = () => {
   };
 
   return (
-    <div className="relative grid grid-cols-12 text-white">
+    <div className="relative p-5 grid grid-cols-12 text-white">
       {/* Left Navigation with sticky positioning */}
-      <div className="col-span-1">
-        <ul className="flex gap-1 sticky p-3 top-0 flex-col text-theme text-xs">
+      <div className="xl:col-span-2 hidden xl:block">
+        <ul className="flex gap-1 pt-12 sticky top-0 flex-col text-theme text-xs">
           <LinkScroll
             id="reputation-anchor"
             to="reputation"
@@ -86,7 +94,7 @@ const ScrollSection = () => {
             activeClass="font-semibold border-l-2 transition-all pl-2 border-transparent border-theme"
             spy={true}
             smooth={true}
-            duration={100}
+            duration={500}
           >
             Our Reputation
           </LinkScroll>
@@ -97,7 +105,7 @@ const ScrollSection = () => {
             activeClass="font-semibold border-l-2 transition-all pl-2 border-transparent border-theme"
             spy={true}
             smooth={true}
-            duration={100}
+            duration={500}
           >
             Our Model
           </LinkScroll>
@@ -108,7 +116,7 @@ const ScrollSection = () => {
             activeClass="font-semibold border-l-2 transition-all pl-2 border-transparent border-theme"
             spy={true}
             smooth={true}
-            duration={100}
+            duration={500}
           >
             Our Services
           </LinkScroll>
@@ -116,36 +124,44 @@ const ScrollSection = () => {
       </div>
 
       {/* Right Content Area */}
-      <div className="col-span-11">
-        <div className="py-24 px-8 w-full" id="reputation">
-          <h1 className="text-5xl text-theme">Lorem ipsum dolor sit amet</h1>
-          <h3 className="text-4xl py-4 font-light">drive business growth.</h3>
+      <div className="col-span-12 xl:col-span-10">
+        <div className="py-24 px-2 sm:px-4 xl:px-8 w-full" id="reputation">
+          <h1 className="text-4xl lg:text-5xl text-theme">
+            Lorem ipsum dolor sit amet
+          </h1>
+          <h3 className="text-3xl lg:text-4xl py-2 lg:py-4 font-light">
+            drive business growth.
+          </h3>
           <div className="h-full">
-            <div className="grid grid-cols-2 gap-12">
-              <div>
+            <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-2 gap-12">
+              <div className="col-span-2 lg:col-span-1">
                 <div className="pt-12">
-                  <p className="text-theme text-xl font-light">
+                  <p className="text-theme text-sm sm:text-lg lg:text-xl font-light">
                     Trusted campaigns
                   </p>
-                  <div className="py-4">
-                    <h1 className="text-theme text-6xl font-semibold">
+                  <div className="py-2 lg:py-4">
+                    <h1 className="text-theme text-5xl lg:text-6xl font-semibold">
                       Click Baitz
                     </h1>
-                    <h3 className="text-theme text-4xl ">Agency</h3>
+                    <h3 className="text-theme text-2xl md:text-4xl ">Agency</h3>
                   </div>
                 </div>
-                <div className="pb-4">
-                  <p>
-                    Believe in Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Believe in Lorem ipsum dolor sit
-                    amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.
+                <div className="py-2 md:py-4">
+                  <p className="text-sm md:text-base">
+                    Welcome to Click Baitz, your partner in creative innovation
+                    and digital growth. We specialize in transforming brands
+                    through website design, branding, and comprehensive social
+                    media management, while offering expert marketplace and
+                    production services. Let us bring your vision to life with
+                    standout merchandising, media strategies, and tailored
+                    content creation.
                   </p>
                 </div>
                 <div className="my-2">
-                  <button className="bg-theme text-black font-semibold flex gap-2 items-center py-2 px-4 rounded-lg">
-                    <p>See examples of our works</p>
+                  <button className="bg-theme text-black font-semibold flex gap-2 items-center py-1 md:py-2 px-3 md:px-4 rounded-lg">
+                    <p className="text-sm md:text-base">
+                      See examples of our works
+                    </p>
                     <span>
                       <svg
                         width="12"
@@ -163,10 +179,10 @@ const ScrollSection = () => {
                   </button>
                 </div>
               </div>
-              <div>
-                <div className="grid grid-cols-2 h-full gap-5">
+              <div className="col-span-3 lg:col-span-1">
+                <div className="grid grid-cols-5 h-full gap-5">
                   {/* IMAGES */}
-                  <div className="col-span-1 relative flex justify-center items-center">
+                  <div className="col-span-3 relative flex justify-center items-center">
                     <div className="absolute flex justify-center items-center w-full h-full">
                       <img
                         src={image}
@@ -177,8 +193,8 @@ const ScrollSection = () => {
 
                     {/* Content */}
                     <div className="transition-all absolute inset-0 bottom-6 flex flex-col items-center justify-end px-6">
-                      <p className="">{imageClientName}</p>
-                      <h1 className="text-white text-center text-3xl font-bold">
+                      <p className="text-xs lg:text-base">{imageClientName}</p>
+                      <h1 className="text-white text-center text-xl lg:text-3xl font-bold">
                         {imageClientWork}
                       </h1>
                     </div>
@@ -206,17 +222,17 @@ const ScrollSection = () => {
                     </div>
                   </div>
                   {/* BUTTONS */}
-                  <div className=" col-span-1 w-full flex flex-col-reverse justify-center gap-3">
+                  <div className=" col-span-2 w-full flex flex-col-reverse justify-center gap-3">
                     {buttonDetails.map((button, index) => (
                       <div key={index}>
                         <button
                           onClick={() => handleMainImage(button)}
-                          className={`rounded-lg w-full p-4 ${button.color} transition-all hover:opacity-90 text-black flex items-center gap-2`}
+                          className={`rounded-lg w-full p-3 md:p-4 lg:p-3 ${button.color} transition-all hover:opacity-90 text-black flex items-center gap-1 md:gap-2`}
                         >
                           <span
                             dangerouslySetInnerHTML={{ __html: button.logo }}
                           />
-                          <span className="text-xl font-semibold">
+                          <span className="text-xs sm:text-base lg:text-xl font-semibold">
                             {button.tagline}
                           </span>
                         </button>
@@ -230,24 +246,32 @@ const ScrollSection = () => {
         </div>
         <div className="min-h-screen py-24 px-8 w-full" id="model">
           <div>
-            <h1 className="text-5xl text-theme">Lorem ipsum dolor sit amet,</h1>
-            <h1 className="text-5xl text-theme">consectetur adipiscing.</h1>
-            <h3 className="text-4xl py-4 font-light">
+            <h1 className="text-4xl lg:text-5xl  text-theme">
+              Lorem ipsum dolor sit amet,
+            </h1>
+            <h1 className="text-4xl lg:text-5xl  text-theme">
+              consectetur adipiscing.
+            </h1>
+            <h3 className="text-3xl lg:text-4xl py-2 lg:py-4 font-light">
               Go beyond simple media buying.
             </h3>
           </div>
-          <div className="flex w-full items-start gap-20">
-            <div className="w-full py-[30vh]">
+          <div className="hidden md:flex w-full items-start gap-20">
+            <div className="w-full py-[45vh]">
               <div>
                 <ul>
                   {models.map((model, index) => (
                     <li key={index}>
                       <ModelElement id={model.index}>
-                        <p>{model.index}.</p>
-                        <h1 className="py-4 pl-4 text-theme font-heading text-5xl">
+                        <p className="text-xs sm:text-sm lg:text-base">
+                          {model.index}.
+                        </p>
+                        <h1 className="py-4 pl-4 text-theme font-heading text-4xl lg:text-5xl">
                           {model.title}
                         </h1>
-                        <p>{model.description}</p>
+                        <p className="text-sm lg:text-base">
+                          {model.description}
+                        </p>
                       </ModelElement>
                     </li>
                   ))}
@@ -257,26 +281,64 @@ const ScrollSection = () => {
             <div className="sticky top-0 flex h-screen w-full items-center">
               <div className="relative rounded-2xl aspect-square w-full bg-gray-100">
                 {models.map((model, index) => (
-                  <model.color key={index} id={model.index}></model.color>
+                  <model.color
+                    key={index}
+                    id={model.index}
+                    activate={true}
+                  ></model.color>
                 ))}
               </div>
             </div>
+          </div>
+          <div className="flex md:hidden">
+            <ul className="max-w-md mx-auto py-24">
+              {/* <div>
+                <div className="relative rounded-2xl aspect-square w-full bg-gray-100">
+                  {models.map((model, index) => (
+                    <model.color key={index} id={model.index}></model.color>
+                  ))}
+                </div>
+              </div> */}
+              {models.map((model, index) => (
+                <li key={index} className="">
+                  <div className="relative rounded-2xl aspect-square w-full bg-gray-100">
+                    <model.color
+                      key={index}
+                      id={model.index}
+                      activate={false}
+                    ></model.color>
+                  </div>
+                  <div id={model.index} className="py-8">
+                    {/* <p className="text-xs sm:text-sm lg:text-base">
+                        {model.index}.
+                      </p> */}
+                    <h1 className="py-4 text-theme font-heading text-4xl lg:text-5xl">
+                      {model.title}
+                    </h1>
+                    <p className="text-sm lg:text-base">{model.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <div className="min-h-screen py-24 px-8 w-full" id="services">
           <h1 className="text-5xl text-theme">What we do.</h1>
           <h3 className="text-4xl py-4 font-light">Core Services.</h3>
           <div className="w-full">
-            <Tabs defaultValue="creativeDesign" className="">
+            <Tabs defaultValue="creativeDesign">
               <div className="flex justify-center">
                 <TabsList className="bg-[#FDD034] text-black">
-                  {services.map((service, index) => (
-                    <TabsTrigger key={index} value={service.id}>
-                      {service.title}
-                    </TabsTrigger>
-                  ))}
+                  <div className="">
+                    {services.map((service, index) => (
+                      <TabsTrigger key={index} value={service.id}>
+                        {index + 1}
+                      </TabsTrigger>
+                    ))}
+                  </div>
                 </TabsList>
               </div>
+
               {services.map((service, index) => (
                 <TabsContent key={index} value={service.id}>
                   <motion.div
@@ -298,6 +360,9 @@ const ScrollSection = () => {
               ))}
             </Tabs>
           </div>
+          {/* <div>
+            <TabComponent />
+          </div> */}
         </div>
       </div>
     </div>

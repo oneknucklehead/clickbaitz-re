@@ -1,33 +1,33 @@
 const faqData = [
     {
         id: "01",
-        question: "We need results immediately how do you deliver?",
+        question: "Is hiring Click Baitz a WISE investment?",
         answer:
-            "We have a history of making big things happen for the ecommerce brands that we work with and we know how to translate that historical success to work hard for your brand as well. We have the tools and the skills to help take your brand to the next level. The success of your ecommerce brand is our top priority. We use innovative campaign crafting and design techniques to make superior content that drives sales for your brand. ",
+            "While investing in Click Baitz may require a financial commitment, our services are designed to deliver substantial value through high-quality content, expert insights, and targeted strategies that can enhance your brand’s visibility and engagement. We believe that the return on investment will outweigh the initial costs by driving growth and audience connection.",
     },
     {
         id: "02",
-        question: "What is your pricing structure?",
+        question: "In what ways does Click Baitz contribute to your legacy?",
         answer:
-            "Our pricing structure is based on the scope of work and the specific needs of your business. We offer flexible pricing to accommodate various business sizes and goals.",
+            "At Click Baitz, we believe that every story matters. By partnering with us, you can amplify your unique voice and share your journey with the world. Together, we create impactful content that resonates deeply with your audience, fostering connections that endure. As you build your legacy, we’re here to support you every step of the way, helping you leave a lasting mark that reflects your values and passion. Let’s create something extraordinary together!",
     },
     {
         id: "03",
-        question: "Can you deliver for our design needs?",
+        question: "What expertise does the Click Baitz team bring to my industry?",
         answer:
-            "Absolutely! We have a talented design team that specializes in creating bespoke, high-converting designs for all business types.",
+            "Our team’s extensive backgrounds in journalism, digital marketing, content creation, and technology equip us to understand and cater to a variety of industries. We bring insights tailored to meet your sector’s unique demands, helping you connect with audiences, stay on top of trends, and leverage data-driven strategies for growth.",
     },
     {
         id: "04",
-        question: "Do you have experience with my industry?",
+        question: "Can you explain Click Baitz's approach to content curation?",
         answer:
-            "Yes, we have worked with clients from a wide range of industries and bring that experience to every new project we undertake.",
+            "At Click Baitz, we prioritize quality and relevance in our content curation process. Our team conducts thorough research to identify trending topics, evaluates content for accuracy, and includes diverse perspectives. We also value community feedback and regularly analyze performance metrics to adapt our strategy, ensuring that we consistently deliver engaging and informative content that meets our audience's needs.",
     },
     {
         id: "05",
-        question: "Will your team take care of everything?",
+        question: "Who can connect with Click Baitz?",
         answer:
-            "Our team can handle everything from strategy to execution. We’ll work with you closely to ensure every aspect of the project meets your expectations.",
+            "Click Baitz invites partnerships from a variety of stakeholders, including content creators, digital marketers, and brands aiming to enhance their online presence. We collaborate with bloggers, social media influencers, and businesses seeking high-quality, engaging content. By partnering with us, these individuals and organizations can leverage our platform to expand their reach, connect with target audiences, and drive growth in the digital space.",
     },
 ];
 export default faqData;

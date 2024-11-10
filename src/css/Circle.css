@@ -49,6 +49,58 @@
   top: 128px;
 }
 
+@media screen and (max-width: 1024px) {
+  .circle {
+    width: 140px;
+    height: 140px;
+  }
+  .text span {
+    position: absolute;
+    left: 50%;
+    font-size: 0.8rem;
+    transform-origin: 0 70px;
+    text-transform: uppercase;
+  }
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+  .bg-text {
+    font-size: 60px;
+  }
+  .position1 {
+    top: 22px;
+  }
+  .position2 {
+    top: 80px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .circle {
+    width: 90px;
+    height: 90px;
+  }
+  .text span {
+    position: absolute;
+    left: 50%;
+    font-size: 0.6rem;
+    transform-origin: 0 45px;
+    text-transform: uppercase;
+  }
+  .logo {
+    width: 45px;
+    height: 45px;
+  }
+  .bg-text {
+    font-size: 27px;
+  }
+  .position1 {
+    top: 15px;
+  }
+  .position2 {
+    top: 50px;
+  }
+}
 @media screen and (max-width: 340px) {
   .circle {
     width: 180px;

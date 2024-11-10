@@ -13,8 +13,8 @@ const Footer = () => {
         <div className=" px-16">
           <img src={logo} alt="Click Baitz Logo" className="mb-8" />
         </div>
-        <div className="gap-8 text-theme px-16 py-8 grid grid-cols-2 w-full">
-          <div className="flex flex-col gap-8">
+        <div className="gap-8 text-theme px-16 py-8 grid lg:grid-cols-2 w-full">
+          <div className="flex flex-col gap-8 mb-40">
             <h1 className="text-4xl mb-4">
               We connect with ambitious brands and people.
             </h1>
@@ -111,7 +111,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="gap-8 items-center text-theme px-16 py-8 grid grid-cols-2 w-full">
+        <div className="gap-8 items-center text-theme px-16 py-8 grid  lg:grid-cols-2 w-full">
           <div className="">
             <p className="text-sm font-light">Email us at:</p>
             <a

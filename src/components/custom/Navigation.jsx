@@ -14,6 +14,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Link as LinkScroll } from "react-scroll";
 
 import caseStudyItems from "@/data/caseStudyItemsList";
 import { aboutItems, aboutMainItem } from "@/data/aboutItems";
@@ -22,13 +23,18 @@ export function NavigationMenuComponent() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <Link to="/model" legacyBehavior passHref>
+        <LinkScroll
+          to="model"
+          className="cursor-pointer"
+          legacyBehavior
+          passHref
+        >
           <NavigationMenuItem>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Our Model
             </NavigationMenuLink>
           </NavigationMenuItem>
-        </Link>
+        </LinkScroll>
         <NavigationMenuItem>
           <Link to={"/about"}>
             <NavigationMenuTrigger className="">About Us</NavigationMenuTrigger>

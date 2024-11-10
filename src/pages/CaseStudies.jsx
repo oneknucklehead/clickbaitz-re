@@ -1,7 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import image1 from "../assets/case-studies/chamak1.jpg";
-import image2 from "../assets/case-studies/chamak2.jpg";
+
 import caseStudyData from "@/data/caseStudies";
 import Navbar from "@/components/custom/Navbar";
 import Footer from "@/components/sections/Footer";
@@ -9,15 +8,7 @@ import { Link } from "react-router-dom";
 
 export default function CaseStudies() {
   const [navbarHeight, setNavbarHeight] = useState(80);
-  //   const [activeCaseStudy, setActiveCaseStudy] = useState(caseStudyData[0].name);
-  //   const [activeCaseStudyData, setActiveCaseStudyData] = useState(
-  //     caseStudyData[0].data
-  //   );
   const navbarRef = useRef(null);
-  //   const handleActiveCaseStudy = (caseStudy) => {
-  //     setActiveCaseStudyData(caseStudy.data);
-  //     setActiveCaseStudy(caseStudy.name);
-  //   };
   useLayoutEffect(() => {
     if (navbarRef.current) {
       setNavbarHeight(navbarRef.current.clientHeight);
