@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import caseStudyData from "@/data/caseStudies";
@@ -20,6 +20,13 @@ export default function CaseStudies() {
     setSelected(option);
   };
 
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  // Reset imageLoaded when selected changes
+  useEffect(() => {
+    setImageLoaded(false);
+  }, [selected]);
+
   return (
     <div className="bg-[#0d0d0d]">
       <Navbar ref={navbarRef} />
@@ -29,9 +36,9 @@ export default function CaseStudies() {
           <h2 className="text-6xl font-bold text-theme mt-2 uppercase">
             Studies
           </h2>
-          <p className="text-white text-4xl mt-4">2023 - 2024.</p>
+          {/* <p className="text-white text-4xl mt-4">2023 - 2024.</p> */}
         </div>
-        <div className="flex justify-between p-10">
+        <div className="grid grid-cols-2 gap-24 p-10">
           <div className="w-full h-full">
             <ul className="mt-8 flex justify-center flex-col gap-8">
               <AnimatePresence>
@@ -69,19 +76,22 @@ export default function CaseStudies() {
 
           {/* Right Column */}
           <div className="w-full">
-            <motion.div
-              key={selected}
-              //   initial={{ opacity: 0, x: 100 }}
-              //   animate={{ opacity: 1, x: 0 }}
-              //   exit={{ opacity: 0, x: -100 }}
-              //   transition={{ duration: 0.5 }}
-              className="flex flex-col items-start"
-            >
+            <motion.div key={selected} className="flex flex-col items-start">
               <div className="relative w-72 h-48 ml-4">
+                {/* Skeleton loader */}
+                {!imageLoaded && (
+                  <div className="absolute w-full h-full bg-gray-300 rounded-lg animate-pulse"></div>
+                )}
+
+                {/* Lazy load images */}
                 <motion.img
                   src={caseStudyData[selected].images[1]}
                   alt="image1"
-                  className="absolute object-cover w-full h-full rounded-lg shadow-lg"
+                  loading="lazy"
+                  className={`absolute object-cover w-full h-full rounded-lg shadow-lg transition-opacity duration-500 ${
+                    imageLoaded ? "opacity-100" : "opacity-0"
+                  }`}
+                  onLoad={() => setImageLoaded(true)} // Set to true when image is loaded
                   initial={{ x: 0 }}
                   animate={{ x: -20, y: -35, rotate: -4 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
@@ -89,15 +99,19 @@ export default function CaseStudies() {
                 <motion.img
                   src={caseStudyData[selected].images[0]}
                   alt="image2"
-                  className="absolute  object-cover w-full h-full rounded-lg shadow-lg"
+                  loading="lazy"
+                  className={`absolute object-cover w-full h-full rounded-lg shadow-lg transition-opacity duration-500 ${
+                    imageLoaded ? "opacity-100" : "opacity-0"
+                  }`}
+                  onLoad={() => setImageLoaded(true)} // Set to true when image is loaded
                   initial={{ x: 0 }}
                   animate={{ y: 8, rotate: 11 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
                 />
               </div>
 
+              {/* Text and Button with Animation */}
               <div className="mt-10">
-                {/* Heading with index animation */}
                 <motion.h3
                   className="text-4xl font-light text-theme"
                   key={caseStudyData[selected].index}
@@ -108,7 +122,6 @@ export default function CaseStudies() {
                   #{caseStudyData[selected].index}
                 </motion.h3>
 
-                {/* Tags animation */}
                 <motion.div
                   className="flex text-sm space-x-4 mt-2"
                   key={caseStudyData[selected].tags.join()}
@@ -129,23 +142,18 @@ export default function CaseStudies() {
                   ))}
                 </motion.div>
 
-                {/* Description animation */}
                 <motion.p
                   className="mt-6 mb-2 text-theme max-w-md"
                   key={caseStudyData[selected].description}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  // transition={{ duration: 0.5, delay: 0.2 }}
                   transition={{ duration: 0.3, delay: 0.3 }}
                 >
                   {caseStudyData[selected].description}
                 </motion.p>
 
-                {/* Button animation */}
                 <motion.div
                   className="flex items-center gap-2 mt-4 px-4 py-2 bg-theme w-fit font-semibold text-black rounded-lg cursor-pointer"
-                  // whileHover={{ scale: 1.05 }}
-                  // whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: 0.3 }}

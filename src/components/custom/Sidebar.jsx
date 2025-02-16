@@ -7,32 +7,41 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Link } from "react-router-dom";
+import { Events, Link as LinkScroll, scrollSpy } from "react-scroll";
 import { motion } from "framer-motion";
 import logo from "../../assets/logo.png";
 
 export function DrawerComponent() {
   const [activeIndex, setActiveIndex] = React.useState(null);
+  React.useEffect(() => {
+    Events.scrollEvent.register("begin", (to, element) => {
+      console.log("begin", to, element);
+    });
 
+    Events.scrollEvent.register("end", (to, element) => {
+      console.log("end", to, element);
+    });
+
+    scrollSpy.update();
+
+    return () => {
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+    };
+  }, []);
   const toggleMenu = (index) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
 
   const menuItems = [
-    { name: "Case Studies" },
-    { name: "Services" },
+    // { name: "Our Model", onscroll: true, link: "model" },
     {
       name: "About",
-      subOptions: ["Our Ecosystem", "Our Thesis", "Darkmatter"],
+      link: "about",
+      // subOptions: ["Our Ecosystem", "Our Thesis", "Darkmatter"],
     },
-    {
-      name: "Careers",
-      subOptions: ["Option 1", "Option 2"],
-    },
-    {
-      name: "Education",
-      subOptions: ["Option 1", "Option 2", "Option 3"],
-    },
-    { name: "Pricing" },
+    { name: "Case Studies", link: "case-studies" },
+    { name: "Services", link: "services" },
   ];
 
   return (
@@ -82,7 +91,7 @@ export function DrawerComponent() {
 
           <div className="bg-[#201f1f] p-4 text-white">
             {menuItems.map((item, index) => (
-              <div key={index}>
+              <Link to={`${item.link}`} key={index}>
                 <div
                   className="cursor-pointer w-fit transition-all flex items-center gap-2"
                   onClick={() => toggleMenu(index)}
@@ -114,7 +123,7 @@ export function DrawerComponent() {
                           fill={`${
                             activeIndex === index ? "white" : "#ffffff80"
                           }
-                            `}
+              `}
                         />
                       </svg>
                     </div>
@@ -139,7 +148,7 @@ export function DrawerComponent() {
                     </ul>
                   </motion.div>
                 )}
-              </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -35,11 +35,12 @@ export function NavigationMenuComponent() {
             </NavigationMenuLink>
           </NavigationMenuItem>
         </LinkScroll>
+
         <NavigationMenuItem>
           <Link to={"/about"}>
             <NavigationMenuTrigger className="">About Us</NavigationMenuTrigger>
           </Link>
-          <NavigationMenuContent>
+          {/* <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 {aboutMainItem.map((item, index) => (
@@ -58,7 +59,6 @@ export function NavigationMenuComponent() {
                           className="aspect-video"
                         />
                       </div>
-                      {/* <Icons.logo className="h-6 w-6" /> */}
                       <div className="flex gap-1 items-center mb-2 text-xs font-medium">
                         <p>{item.title}</p>
                         <span className="border p-[2px] py-[3px] rounded-full group-hover:translate-x-1 transition duration-300">
@@ -86,13 +86,13 @@ export function NavigationMenuComponent() {
                 </ListItem>
               ))}
             </ul>
-          </NavigationMenuContent>
+          </NavigationMenuContent> */}
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link to={"/case-studies"}>
             <NavigationMenuTrigger>Case Studies</NavigationMenuTrigger>
           </Link>
-          <NavigationMenuContent>
+          {/* <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {caseStudyItems.map((component) => (
                 <ListItem
@@ -104,7 +104,12 @@ export function NavigationMenuComponent() {
                 </ListItem>
               ))}
             </ul>
-          </NavigationMenuContent>
+          </NavigationMenuContent> */}
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link to={"/services"}>
+            <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+          </Link>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

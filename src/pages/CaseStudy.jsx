@@ -19,7 +19,7 @@ const CaseStudy = () => {
 
   const navbarRef = useRef(null);
   const upperMarquee = [img1, img2, img3, img4, img5, img6];
-  const lowerMarquee = [img6, img5, img4, img3, img2, img1];
+  // const lowerMarquee = [img6, img5, img4, img3, img2, img1];
   useLayoutEffect(() => {
     if (navbarRef.current) {
       setNavbarHeight(navbarRef.current.clientHeight);
@@ -58,7 +58,7 @@ const CaseStudy = () => {
         <div>
           <Marquee className={"container"}>
             <MarqueeImageItem images={upperMarquee} from={0} to={"-100%"} />
-            <MarqueeImageItem images={lowerMarquee} from={"-100%"} to={0} />
+            {/* <MarqueeImageItem images={lowerMarquee} from={"-100%"} to={0} /> */}
           </Marquee>
         </div>
 

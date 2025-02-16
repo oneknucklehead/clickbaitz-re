@@ -1,0 +1,50 @@
+.image_reveal {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  overflow: clip;
+}
+
+.case-studies-ul {
+  list-style: none;
+  border: 1px solid white;
+}
+
+.case-studies-li {
+  &:not(:last-child) {
+    border-bottom: 1px solid white;
+  }
+}
+.hovered_img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: opacity 200ms ease-in-out;
+}
+.skeleton {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}

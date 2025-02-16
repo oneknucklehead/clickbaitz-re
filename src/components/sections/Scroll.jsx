@@ -140,7 +140,7 @@ const ScrollSection = () => {
                     Trusted campaigns
                   </p>
                   <div className="py-2 lg:py-4">
-                    <h1 className="text-theme text-5xl lg:text-6xl font-semibold">
+                    <h1 className="text-theme text-4xl lg:text-6xl font-semibold">
                       Click Baitz
                     </h1>
                     <h3 className="text-theme text-2xl md:text-4xl ">Agency</h3>
@@ -159,13 +159,27 @@ const ScrollSection = () => {
                 </div>
                 <div className="my-2">
                   <button className="bg-theme text-black font-semibold flex gap-2 items-center py-1 md:py-2 px-3 md:px-4 rounded-lg">
-                    <p className="text-sm md:text-base">
+                    <p className="text-xs md:text-base">
                       See examples of our works
                     </p>
-                    <span>
+                    <span className="hidden md:block">
                       <svg
                         width="12"
                         height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.182 1.18201C11.182 0.629723 10.7343 0.182008 10.182 0.182008L1.18201 0.182007C0.629723 0.182007 0.182008 0.629722 0.182008 1.18201C0.182008 1.73429 0.629723 2.18201 1.18201 2.18201L9.18201 2.18201L9.18201 10.182C9.18201 10.7343 9.62972 11.182 10.182 11.182C10.7343 11.182 11.182 10.7343 11.182 10.182L11.182 1.18201ZM1.70711 11.0711L10.8891 1.88911L9.4749 0.474901L0.292893 9.65691L1.70711 11.0711Z"
+                          fill="black"
+                        />
+                      </svg>
+                    </span>
+                    <span className="block md:hidden">
+                      <svg
+                        width="8"
+                        height="8"
                         viewBox="0 0 12 12"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -230,7 +244,12 @@ const ScrollSection = () => {
                           className={`rounded-lg w-full p-3 md:p-4 lg:p-3 ${button.color} transition-all hover:opacity-90 text-black flex items-center gap-1 md:gap-2`}
                         >
                           <span
+                            className="hidden md:block"
                             dangerouslySetInnerHTML={{ __html: button.logo }}
+                          />
+                          <span
+                            className="block md:hidden"
+                            dangerouslySetInnerHTML={{ __html: button.logoMob }}
                           />
                           <span className="text-xs sm:text-base lg:text-xl font-semibold">
                             {button.tagline}
@@ -244,7 +263,10 @@ const ScrollSection = () => {
             </div>
           </div>
         </div>
-        <div className="min-h-screen py-24 px-8 w-full" id="model">
+        <div
+          className="min-h-screen md:py-24 px-2 sm:px-4 xl:px-8 w-full"
+          id="model"
+        >
           <div>
             <h1 className="text-4xl lg:text-5xl  text-theme">
               Lorem ipsum dolor sit amet,
@@ -322,10 +344,15 @@ const ScrollSection = () => {
             </ul>
           </div>
         </div>
-        <div className="min-h-screen py-24 px-8 w-full" id="services">
-          <h1 className="text-5xl text-theme">What we do.</h1>
-          <h3 className="text-4xl py-4 font-light">Core Services.</h3>
-          <div className="w-full">
+        <div
+          className="min-h-screen py-24 px-2 sm:px-4 xl:px-8 w-full"
+          id="services"
+        >
+          <h1 className="text-4xl lg:text-5xl text-theme">What we do.</h1>
+          <h3 className="text-3xl lg:text-4xl py-2 lg:py-4 font-light">
+            Core Services.
+          </h3>
+          <div className="w-full py-8">
             <Tabs defaultValue="creativeDesign">
               <div className="flex justify-center">
                 <TabsList className="bg-[#FDD034] text-black">

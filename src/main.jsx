@@ -9,6 +9,8 @@ import TermsAndCondition from "./pages/TermsAndCondition";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CaseStudy from "./pages/CaseStudy";
 import Error from "./pages/Error";
+import Services from "./pages/Services";
+import CaseStudiesNew from "./pages/CaseStudiesNew";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <About />,
+  },
+  {
+    path: "/services",
+    element: <Services />,
   },
   {
     path: "/case-studies",

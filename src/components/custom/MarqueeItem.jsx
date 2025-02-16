@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const MarqueeItem = ({ texts, from, to }) => {
   return (
-    <div className="flex text-xs sm:text-md lg:text-xl font-semibold MyGradient">
+    <div className="flex text-base lg:text-xl font-semibold MyGradient">
       <motion.div
         initial={{ x: `${from}` }}
         animate={{ x: `${to}` }}
