@@ -2,9 +2,11 @@ import React from "react";
 import logo from "../../assets/logo.png";
 import pic1 from "../../assets/footer1.jpg";
 import pic2 from "../../assets/footer2.jpg";
+import pdf from "../../assets/brochure.pdf";
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import DownloadButton from "../custom/DownloadBtn";
 
 const Footer = () => {
   return (
@@ -70,41 +72,22 @@ const Footer = () => {
                   to="/call"
                   className="font-semibold border-theme transition-all pb-3 border-b-2 text-base md:text-xl"
                 >
-                  Schedule a meeting with us
+                  Book a call
                 </Link>
               </li>
               <li>
                 <h2 className="text-xs md:text-sm font-light pb-1">
-                  Want to join the team?
+                  Who we are?
                 </h2>
                 <Link
                   to={"/careers"}
                   className="font-semibold border-theme border-opacity-100 pb-3 border-b-2  text-base md:text-xl"
                 >
-                  Learn about joining the Darkside
+                  More about us
                 </Link>
               </li>
               <li>
-                <h2 className="text-xs md:text-sm font-light pb-1">
-                  Fundraising for your startup?
-                </h2>
-                <Link
-                  to={"/about-us"}
-                  className="font-semibold border-theme border-opacity-100 pb-3 border-b-2  text-base md:text-xl"
-                >
-                  Learn about Darkmatter
-                </Link>
-              </li>
-              <li>
-                <h2 className="text-xs md:text-sm font-light pb-1">
-                  Want to level up your career?
-                </h2>
-                <Link
-                  to={"/dont-know"}
-                  className="font-semibold border-theme border-opacity-100 pb-3 border-b-2  text-base md:text-xl"
-                >
-                  Learn about our University
-                </Link>
+                <DownloadButton fileUrl={pdf} fileName={"Brochure.pdf"} />
               </li>
             </ul>
           </div>
