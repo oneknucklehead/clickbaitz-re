@@ -86,9 +86,9 @@ const Footer = () => {
                   More about us
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <DownloadButton fileUrl={pdf} fileName={"Brochure.pdf"} />
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className=" hidden md:flex justify-around gap-8 xl:hidden">
