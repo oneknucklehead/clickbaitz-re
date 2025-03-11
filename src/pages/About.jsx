@@ -84,7 +84,7 @@ const About = () => {
             Enter your email to gain exclusive access to our portfolio.
           </h3>
           <div className="flex items-center justify-center w-full gap-4">
-            <div className="w-[50%] relative flex justify-center">
+            <div className="w-[50%] my-4 relative flex justify-center">
               <input
                 type="email"
                 id="email"
@@ -133,10 +133,10 @@ const About = () => {
             )}
           </div>
 
-          <div>{result}</div>
+          <div className="text-xs">{result}</div>
         </div>
         <AboutGridItems
-          tagBehind={"Join us"}
+          tagBehind={"Join"}
           title={"WHAT CAN WE DO TOGETHER?"}
           description={`Together, we can unlock your business's full potential by building a strong, memorable brand that resonates with your audience. We will create innovative marketing campaigns that drive engagement, generate leads, and deliver measurable results. By combining your vision and expertise with our creative and strategic capabilities, we will craft a unique story for your brand and bring it to life across multiple platforms. Whether you're launching a new product, expanding into new markets, or refining your digital presence, our collaboration will ensure your goals are met with precision and impact. Let’s work together to transform challenges into opportunities and pave the way for sustainable growth and success.`}
         />

@@ -70,7 +70,7 @@ const ServiceCard = ({ imgUrl, index, title, description, link }) => {
           <img
             src={imgUrl}
             alt="Creative Design"
-            className="relative h-full w-full max-w-[300px] md:max-w-[400px] lg:max-w-[450px] rounded-lg shadow-2xl"
+            className="relative h-full w-full object-cover max-w-[300px] md:max-w-[400px] lg:max-w-[450px] rounded-lg shadow-2xl"
           />
         </div>
       </div>

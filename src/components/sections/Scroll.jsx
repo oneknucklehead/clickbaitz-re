@@ -22,7 +22,7 @@ import { Link } from "react-router-dom";
 import models from "@/data/models";
 import ModelElement from "../custom/ModelElement";
 import imgUrl from "../../assets/reputation/pic1.jpg";
-import ModelCard, { Colors, SchedulingLinks, Team } from "../custom/ModelCard";
+import ModelCard, { Colors, SchedulingLinks } from "../custom/ModelCard";
 
 import services from "@/data/serviceItems";
 import ServiceCard from "../custom/ServiceCard";
