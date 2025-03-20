@@ -19,7 +19,6 @@ const CaseStudy = () => {
 
   const navbarRef = useRef(null);
   const upperMarquee = [img1, img2, img3, img4, img5, img6];
-  // const lowerMarquee = [img6, img5, img4, img3, img2, img1];
   useLayoutEffect(() => {
     if (navbarRef.current) {
       setNavbarHeight(navbarRef.current.clientHeight);
@@ -29,8 +28,10 @@ const CaseStudy = () => {
 
   // Check if the caseStudy exists in the data
   const study = caseStudyData[caseStudy];
+  console.log("URL: ");
+  console.log(caseStudy);
 
-  const [selected, setSelected] = useState("Our Work");
+  const [selected, setSelected] = useState("Problem");
   console.log("selected:");
   console.log(selected);
 
@@ -45,7 +46,7 @@ const CaseStudy = () => {
   return (
     <div className="bg-[#0d0d0d]">
       <Navbar ref={navbarRef} />
-      <div className="px-16 py-12">
+      <div className="max-w-screen-2xl mx-auto px-16 py-12">
         <div className="grid grid-cols-2 gap-8 m-10">
           <motion.h1 className=" col-span-1 flex items-center justify-end text-6xl font-semibold text-theme">
             {caseStudyData[caseStudy].name}
@@ -57,7 +58,11 @@ const CaseStudy = () => {
 
         <div>
           <Marquee className={"container"}>
-            <MarqueeImageItem images={upperMarquee} from={0} to={"-100%"} />
+            <MarqueeImageItem
+              images={caseStudyData[caseStudy].marqueeImgs}
+              from={0}
+              to={"-100%"}
+            />
             {/* <MarqueeImageItem images={lowerMarquee} from={"-100%"} to={0} /> */}
           </Marquee>
         </div>

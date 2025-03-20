@@ -3,10 +3,10 @@ import { motion, useSpring, AnimatePresence } from "framer-motion";
 import "../css/CaseStudiesNew.css";
 
 // Import images directly
-import chamak from "../assets/case-studies/chamak1.jpg";
-import chamak2 from "../assets/case-studies/chamak2.jpg";
-import chamak3 from "../assets/case-studies/chamakstudy1.jpg";
-import chamak4 from "../assets/case-studies/chamakstudy2.jpg";
+// import chamak from "../assets/case-studies/chamak1.jpg";
+// import chamak2 from "../assets/case-studies/chamak2.jpg";
+// import chamak3 from "../assets/case-studies/chamakstudy1.jpg";
+// import chamak4 from "../assets/case-studies/chamakstudy2.jpg";
 
 const CaseStudiesNew = () => {
   const [img, setImg] = useState({ src: "", alt: "", opacity: 0 });

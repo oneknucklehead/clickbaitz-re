@@ -11,11 +11,11 @@ import DownloadButton from "../custom/DownloadBtn";
 const Footer = () => {
   return (
     // <div className=" p-5">
-    <div className="text-theme px-5 xl:px-16 py-12 gap-8">
+    <div className="text-theme max-w-screen-2xl mx-auto p-5 gap-8">
       {/* <div className=" px-16">
           <img src={logo} alt="Click Baitz Logo" className="mb-8" />
         </div> */}
-      <div className="gap-8 text-theme px-2 sm:px-4 xl:px-16 py-8 grid xl:grid-cols-2 w-full">
+      <div className="gap-8 text-theme px-2 sm:px-4 xl:px-8 py-8 grid xl:grid-cols-2 w-full">
         <div className="flex flex-col gap-8">
           <h1 className="text-4xl text-left md:text-center xl:text-left mb-4">
             We connect with ambitious brands and people.
@@ -144,7 +144,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="gap-8 items-center text-theme px-2 sm:px-4 xl:px-16 py-24 xl:py-8 grid  lg:grid-cols-2 w-full">
+      <div className="gap-8 items-center text-theme px-2 sm:px-4 xl:px-8 py-24 xl:py-8 grid  lg:grid-cols-2 w-full">
         <div className="block md:flex xl:block justify-around items-center flex-col">
           <p className="text-xs md:text-sm font-light">Email us at:</p>
           <a
@@ -162,7 +162,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="text-theme flex flex-wrap justify-around xl:justify-between items-center px-2 sm:px-4 xl:px-16 text-sm">
+      <div className="text-theme flex flex-wrap justify-around xl:justify-between items-center px-2 sm:px-4 xl:px-8 text-sm">
         <div className="flex my-3 justify-center items-center w-full md:w-auto space-x-4">
           <Link
             to={"/terms-and-condition"}

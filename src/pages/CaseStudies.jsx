@@ -30,7 +30,7 @@ export default function CaseStudies() {
   return (
     <div className="bg-[#0d0d0d]">
       <Navbar ref={navbarRef} />
-      <div className="px-16 py-12">
+      <div className="max-w-screen-2xl px-16 mx-auto py-12">
         <div>
           <h2 className="text-6xl font-bold text-theme uppercase">Case</h2>
           <h2 className="text-6xl font-bold text-theme mt-2 uppercase">
@@ -88,7 +88,7 @@ export default function CaseStudies() {
                   src={caseStudyData[selected].images[1]}
                   alt="image1"
                   loading="lazy"
-                  className={`absolute object-cover w-full h-full rounded-lg shadow-lg transition-opacity duration-500 ${
+                  className={`absolute object-cover w-full h-full rounded-lg shadow-xl  transition-opacity duration-500 ${
                     imageLoaded ? "opacity-100" : "opacity-0"
                   }`}
                   onLoad={() => setImageLoaded(true)} // Set to true when image is loaded
@@ -100,7 +100,7 @@ export default function CaseStudies() {
                   src={caseStudyData[selected].images[0]}
                   alt="image2"
                   loading="lazy"
-                  className={`absolute object-cover w-full h-full rounded-lg shadow-lg transition-opacity duration-500 ${
+                  className={`absolute object-cover w-full h-full rounded-lg shadow-lg  transition-opacity duration-500 ${
                     imageLoaded ? "opacity-100" : "opacity-0"
                   }`}
                   onLoad={() => setImageLoaded(true)} // Set to true when image is loaded
