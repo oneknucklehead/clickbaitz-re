@@ -1,16 +1,28 @@
-import { StrictMode } from "react";
+import { Suspense, StrictMode, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home.jsx";
-import About from "./pages/About";
-import CaseStudies from "./pages/CaseStudies";
-import TermsAndCondition from "./pages/TermsAndCondition";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import CaseStudy from "./pages/CaseStudy";
-import Error from "./pages/Error";
-import Services from "./pages/Services";
-import CaseStudiesNew from "./pages/CaseStudiesNew";
+// import Home from "./pages/Home.jsx";
+// import About from "./pages/About";
+// import CaseStudies from "./pages/CaseStudies";
+// import TermsAndCondition from "./pages/TermsAndCondition";
+// import PrivacyPolicy from "./pages/PrivacyPolicy";
+// import CaseStudy from "./pages/CaseStudy";
+// import Error from "./pages/Error";
+// import Services from "./pages/Services";
+// import PaymentPolicy from "./pages/PaymentPolicy";
+import ErrorBoundary from "./components/custom/ErrorBoundary";
+// import PrivPolicy from "./pages/PrivPolicy";
+
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Services = lazy(() => import("./pages/Services"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const CaseStudy = lazy(() => import("./pages/CaseStudy"));
+const TermsAndCondition = lazy(() => import("./pages/TermsAndCondition"));
+const PrivPolicy = lazy(() => import("./pages/PrivPolicy"));
+const PaymentPolicy = lazy(() => import("./pages/PaymentPolicy"));
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,7 +50,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/privacy-policy",
-    element: <PrivacyPolicy />,
+    element: <PrivPolicy />,
+  },
+  {
+    path: "/payment-policy",
+    element: <PaymentPolicy />,
   },
 
   {
@@ -52,6 +68,10 @@ const router = createBrowserRouter([
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ErrorBoundary>
+      <Suspense fallback={<div>Loading...</div>}>
+        <RouterProvider router={router} />
+      </Suspense>
+    </ErrorBoundary>
   </StrictMode>
 );

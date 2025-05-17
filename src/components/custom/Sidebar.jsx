@@ -37,11 +37,11 @@ export function DrawerComponent() {
     // { name: "Our Model", onscroll: true, link: "model" },
     {
       name: "About",
-      link: "about",
+      link: "/about",
       // subOptions: ["Our Ecosystem", "Our Thesis", "Darkmatter"],
     },
-    { name: "Case Studies", link: "case-studies" },
-    { name: "Services", link: "services" },
+    { name: "Case Studies", link: "/case-studies" },
+    // { name: "Services", link: "/services" },
   ];
 
   return (
@@ -67,9 +67,9 @@ export function DrawerComponent() {
         <div className="mx-auto w-full max-w-sm">
           <DrawerFooter>
             <h1 className="text-4xl font-semibold">
-              <Link to={"/"}>
+              <a href="/">
                 <img src={logo} className="h-[35px]" alt="Clickbaitz Logo" />
-              </Link>
+              </a>
             </h1>
             <DrawerClose asChild>
               <button className="bg-white/10 rounded-full w-fit p-3">

@@ -1,9 +1,8 @@
-import React from "react";
-import privacyContent from "@/data/privacyPolicy";
 import AboutGridItems from "@/components/custom/AboutGridItems";
 import Footer from "@/components/sections/Footer";
+import privContent from "@/data/privPolicy";
 
-const PrivacyPolicy = () => {
+const PrivPolicy = () => {
   return (
     <div>
       <div className="bg-black text-white">
@@ -12,7 +11,7 @@ const PrivacyPolicy = () => {
         </h1>
         <div className="max-w-[1000px] mx-auto">
           {/* <div className="min-h-screen"> */}
-          {privacyContent.map((content, index) => (
+          {privContent.map((content, index) => (
             <AboutGridItems
               key={index}
               // tagBehind={"story"}
@@ -27,4 +26,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default PrivPolicy;

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { cn } from "@/lib/utils";
 // import { Icons } from "@/components/icons";
@@ -23,18 +23,20 @@ export function NavigationMenuComponent() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <LinkScroll
-          to="model"
+        {/* <LinkScroll
+          to="/model"
           className="cursor-pointer"
           legacyBehavior
           passHref
-        >
-          <NavigationMenuItem>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+        > */}
+        {/* <NavigationMenuItem> */}
+        {/* <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Our Model
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        </LinkScroll>
+              </NavigationMenuLink> */}
+        {/* <NavigationMenuItem>
+          <NavigationMenuTrigger className="">Our Model</NavigationMenuTrigger>
+        </NavigationMenuItem> */}
+        {/* </LinkScroll> */}
 
         <NavigationMenuItem>
           <Link to={"/about"}>
@@ -106,11 +108,11 @@ export function NavigationMenuComponent() {
             </ul>
           </NavigationMenuContent> */}
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <Link to={"/services"}>
             <NavigationMenuTrigger>Services</NavigationMenuTrigger>
           </Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
       </NavigationMenuList>
     </NavigationMenu>
   );

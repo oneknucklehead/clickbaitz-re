@@ -1,4 +1,4 @@
-const privacyContent = [
+const privContent = [
     {
         title: "Privacy Policy – Clickbaitz",
         description: "At Clickbaitz, we prioritize your privacy and are committed to protecting your personal data. This policy explains how we collect, use, store, and safeguard your information when you interact with our website."
@@ -18,6 +18,10 @@ const privacyContent = [
     {
         title: "Children’s Privacy",
         description: "By using our website, you consent to this policy. We may update it periodically, and continued use implies acceptance of any changes."
+    },
+    {
+        title: "Consent & Updates",
+        description: "By using our website, you consent to this policy. We may update it periodically, and continued use implies acceptance of any changes."
     }
 ];
-export default privacyContent;
+export default privContent;

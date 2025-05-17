@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import slides from "@/data/homeImageBg";
 import Marquee from "./Marquee";
 import RotatingText from "./RotatingText";
@@ -6,26 +6,31 @@ import { SliderCaseStudy } from "./SliderCaseStudy";
 import MarqueeItem from "./MarqueeItem";
 import marqueeItems from "@/data/Marquee";
 import { motion, AnimatePresence } from "framer-motion";
+import { PopupButton } from "react-calendly";
 
 const CarouselHome = ({ navbarHeight }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + slides.length) % slides.length
-    );
-  };
+  }, []);
+  // const handlePrev = () => {
+  //   setCurrentIndex(
+  //     (prevIndex) => (prevIndex - 1 + slides.length) % slides.length
+  //   );
+  // };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 3000);
+    const interval = setInterval(handleNext, 3000);
     return () => clearInterval(interval);
+  }, [handleNext]);
+  useEffect(() => {
+    const img = new Image();
+    img.src = slides[(currentIndex + 1) % slides.length].image;
   }, [currentIndex]);
+
+  const currentSlide = useMemo(() => slides[currentIndex], [currentIndex]);
 
   const fadeVariants = {
     enter: { opacity: 0 },
@@ -43,16 +48,28 @@ const CarouselHome = ({ navbarHeight }) => {
         initial={false}
         className="absolute top-0 left-0 flex items-center w-full h-full justify-center"
       >
-        <motion.img
-          key={slides[currentIndex].id}
-          src={slides[currentIndex].image}
+        <motion.div
+          key={currentSlide.id}
           variants={fadeVariants}
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{ opacity: { duration: 1 } }}
-          className="absolute brightness-50 top-0 left-0 w-full h-full object-cover rounded-b-lg"
-        />
+          transition={{ duration: 1 }}
+          className="absolute top-0 left-0 w-full h-full"
+        >
+          {!imageLoaded && (
+            <div className="w-full h-full bg-gray-950 animate-pulse absolute top-0 left-0 z-10" />
+          )}
+          <img
+            src={currentSlide.image}
+            alt={`slide-${currentSlide.id}`}
+            loading="lazy"
+            onLoad={() => setImageLoaded(true)}
+            className={`absolute brightness-50 top-0 left-0 w-full h-full object-cover rounded-b-lg transition-opacity duration-700 ${
+              imageLoaded ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        </motion.div>
       </AnimatePresence>
       {/* </div> */}
 
@@ -109,8 +126,16 @@ const CarouselHome = ({ navbarHeight }) => {
                 <RotatingText />
               </div>
             </div>
-            <div className="block lg:hidden absolute bottom-10 right-10">
-              <button className="flex  gap-2 bg-theme p-4 rounded-full items-center">
+            <div className="block lg:hidden w-fit h-fit absolute bottom-10 right-10">
+              <button
+                onClick={() => {
+                  window.Calendly.initPopupWidget({
+                    url: "https://calendly.com/zohebcool1542/demo",
+                  });
+                }}
+                className="flex  gap-2 bg-theme p-4 rounded-full items-center"
+              >
+                {/* Icon for small screens */}
                 <span className="block">
                   <svg
                     width="19"
@@ -125,7 +150,11 @@ const CarouselHome = ({ navbarHeight }) => {
                     />
                   </svg>
                 </span>
-                {/* <p>Call</p> */}
+
+                {/* Text for large screens */}
+                <span className="hidden lg:block text-sm md:text-lg lg:text-xl font-semibold">
+                  Book a Call
+                </span>
               </button>
             </div>
           </div>
@@ -138,7 +167,15 @@ const CarouselHome = ({ navbarHeight }) => {
             </div>
             <div>
               <div className="flex justify-end my-3 md:my-6">
-                <button className="w-fit bg-theme flex gap-2 items-center py-3 px-4 lg:py-4 lg:px-6 rounded-full">
+                <button
+                  onClick={() => {
+                    window.Calendly.initPopupWidget({
+                      url: "https://calendly.com/zohebcool1542/demo",
+                    });
+                  }}
+                  className="w-fit bg-theme flex gap-4 items-center py-3 px-4 lg:py-4 lg:px-6 rounded-full"
+                >
+                  {/* Icon for small screens */}
                   <span className="block">
                     <svg
                       width="19"
@@ -154,9 +191,10 @@ const CarouselHome = ({ navbarHeight }) => {
                     </svg>
                   </span>
 
-                  <p className="hidden lg:block text-sm md:text-lg lg:text-xl font-semibold">
-                    Book a call
-                  </p>
+                  {/* Text for large screens */}
+                  <span className="hidden lg:block text-sm md:text-lg lg:text-xl font-semibold">
+                    Book a Call
+                  </span>
                 </button>
               </div>
 

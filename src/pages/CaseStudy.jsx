@@ -13,6 +13,8 @@ import img3 from "../assets/case-studies/chamakstudy3.jpg";
 import img4 from "../assets/case-studies/chamakstudy4.jpg";
 import img5 from "../assets/case-studies/chamakstudy5.jpg";
 import img6 from "../assets/case-studies/chamakstudy6.jpg";
+import Nav from "@/components/custom/NavbarNew";
+import Accordion from "@/components/custom/Accordion";
 
 const CaseStudy = () => {
   const [navbarHeight, setNavbarHeight] = useState(80);
@@ -29,29 +31,33 @@ const CaseStudy = () => {
   // Check if the caseStudy exists in the data
   const study = caseStudyData[caseStudy];
   console.log("URL: ");
-  console.log(caseStudy);
+  console.log(study);
 
   const [selected, setSelected] = useState("Problem");
-  console.log("selected:");
-  console.log(selected);
+  // console.log("selected:");
+  // console.log(selected);
 
   const handleSelection = (option) => {
     setSelected(option);
   };
-
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const selectedStatement = study.studies[selectedIndex];
+  const handleSelectionStatement = (index) => {
+    setSelectedIndex(index);
+  };
   // If the caseStudy does not exist, redirect to error page
   if (!study) {
     return <Navigate to="/error" />;
   }
   return (
     <div className="bg-[#0d0d0d]">
-      <Navbar ref={navbarRef} />
-      <div className="max-w-screen-2xl mx-auto px-16 py-12">
-        <div className="grid grid-cols-2 gap-8 m-10">
-          <motion.h1 className=" col-span-1 flex items-center justify-end text-6xl font-semibold text-theme">
+      <Nav />
+      <div className="max-w-screen-2xl mx-auto px-4 lg:px-16 py-24">
+        <div className="grid lg:grid-cols-2 gap-8 m-10">
+          <motion.h1 className=" col-span-1 flex items-center justify-center lg:justify-end text-6xl font-semibold text-theme">
             {caseStudyData[caseStudy].name}
           </motion.h1>
-          <motion.p className="text-white text-lg max-w-xl">
+          <motion.p className="text-white text-center lg:text-start text-lg lg:max-w-xl">
             {caseStudyData[caseStudy].description}
           </motion.p>
         </div>
@@ -67,24 +73,24 @@ const CaseStudy = () => {
           </Marquee>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 p-10">
+        <div className="hidden lg:grid grid-cols-2 gap-8 p-10">
           <div className="w-full h-full">
             <ul className="mt-8 flex justify-center flex-col gap-8">
               <AnimatePresence>
-                {Object.keys(study.studies).map((option) => (
+                {study?.studies?.map((item, index) => (
                   <motion.h1
-                    key={option}
-                    className={`text-6xl flex gap-2 items-center capitalize transition-all duration-300 font-bold cursor-pointer ${
-                      selected === option
+                    key={item}
+                    className={`text-5xl lg:text-6xl flex gap-2 items-center capitalize transition-all duration-300 font-bold cursor-pointer ${
+                      selectedIndex === index
                         ? "text-theme stroke-none"
                         : "text-transparent stroke-theme"
                     }`}
-                    onClick={() => handleSelection(option)}
+                    onClick={() => handleSelectionStatement(index)}
                     initial={{ opacity: 0, scale: 0.8, x: 0 }}
                     animate={{
-                      x: selected === option ? 120 : 0,
-                      opacity: selected === option ? 1 : 0.5,
-                      scale: selected === option ? 1.2 : 1,
+                      x: selectedIndex === index ? 90 : 0,
+                      opacity: selectedIndex === index ? 1 : 0.5,
+                      scale: selectedIndex === index ? 1.2 : 1,
                     }}
                     exit={{
                       opacity: 0,
@@ -95,11 +101,11 @@ const CaseStudy = () => {
                       duration: 0.3, // Increased duration for smoother transitions
                     }}
                   >
-                    <p>{option}</p>
+                    <p>{item.title}</p>
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{
-                        opacity: selected === option ? 1 : 0,
+                        opacity: selectedIndex === index ? 1 : 0,
                       }}
                       exit={{
                         opacity: 0,
@@ -130,7 +136,7 @@ const CaseStudy = () => {
 
           <div className="w-full h-full">
             <motion.div
-              key={selected}
+              key={selectedStatement.title}
               className="flex-1 p-8 bg-theme rounded-lg shadow-md mb-4 h-full"
               initial={{ opacity: 0, y: 10 }}
               animate={{
@@ -146,13 +152,19 @@ const CaseStudy = () => {
               }}
             >
               <div>
-                <h3 className="text-4xl mb-4 capitalize">{selected}</h3>
+                <h3 className="text-4xl mb-4 capitalize">
+                  {selectedStatement.title}
+                </h3>
               </div>
               <div className="text-black text-lg">
-                {study.studies[selected]}
+                {selectedStatement.content}
               </div>
             </motion.div>
           </div>
+        </div>
+        <div className="block lg:hidden">
+          <Accordion items={study.studies} />
+          {console.log("faqs: " + study.studies)}
         </div>
       </div>
       <Footer></Footer>

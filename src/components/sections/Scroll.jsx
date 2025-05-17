@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
 import {
   Link as LinkScroll,
   Events,
@@ -6,35 +6,19 @@ import {
   scrollSpy,
 } from "react-scroll";
 import { motion } from "framer-motion";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import buttonDetails from "@/data/buttonDetailsReputation";
 import { Link } from "react-router-dom";
 import models from "@/data/models";
-import ModelElement from "../custom/ModelElement";
-import imgUrl from "../../assets/reputation/pic1.jpg";
-import ModelCard, { Colors, SchedulingLinks } from "../custom/ModelCard";
 
 import services from "@/data/serviceItems";
+import ModelElement from "../custom/ModelElement";
 import ServiceCard from "../custom/ServiceCard";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "../ui/carousel";
-import TabComponent from "../custom/TabComponent";
 
+// const ModelElement = lazy(() => import("../custom/ModelElement"));
+// const ServiceCard = lazy(() => import("../custom/ServiceCard"));
 const ScrollSection = () => {
   const [image, setImage] = useState(
     buttonDetails[buttonDetails.length - 1].img
@@ -74,6 +58,7 @@ const ScrollSection = () => {
       Events.scrollEvent.remove("end");
     };
   }, []);
+
   const handleMainImage = (button) => {
     setImage(button.img);
     setImageIndex(button.index);
@@ -81,6 +66,13 @@ const ScrollSection = () => {
     setImageClientName(button.clientName);
     setImageClientWork(button.work);
   };
+
+  const SkeletonBox = ({ height = "200px" }) => (
+    <div
+      className="bg-gray-200 animate-pulse rounded"
+      style={{ height: height }}
+    ></div>
+  );
 
   return (
     <div className="relative p-5 grid grid-cols-12 text-white">
@@ -98,6 +90,7 @@ const ScrollSection = () => {
           >
             Our Reputation
           </LinkScroll>
+          {/* <Element name="model"> */}
           <LinkScroll
             id="model-anchor"
             className="cursor-pointer	transition-all  border-l-2 border-transparent hover:font-semibold hover:pl-2"
@@ -109,6 +102,7 @@ const ScrollSection = () => {
           >
             Our Model
           </LinkScroll>
+          {/* </Element> */}
           <LinkScroll
             id="services-anchor"
             className="cursor-pointer	transition-all  border-l-2 border-transparent hover:font-semibold hover:pl-2"
@@ -159,9 +153,9 @@ const ScrollSection = () => {
                 </div>
                 <div className="my-2">
                   <button className="bg-theme text-black font-semibold flex gap-2 items-center py-1 md:py-2 px-3 md:px-4 rounded-lg">
-                    <p className="text-xs md:text-base">
+                    <Link to={"/case-studies"} className="text-xs md:text-base">
                       See examples of our works
-                    </p>
+                    </Link>
                     <span className="hidden md:block">
                       <svg
                         width="12"
@@ -194,7 +188,7 @@ const ScrollSection = () => {
                 </div>
               </div>
               <div className="col-span-3 lg:col-span-1">
-                <div className="grid grid-cols-5 h-full gap-5">
+                <div className="grid grid-cols-6 md:grid-cols-5 h-full gap-5">
                   {/* IMAGES */}
                   <div className="col-span-3 relative flex justify-center items-center">
                     <div className="absolute flex justify-center items-center w-full h-full">
@@ -236,7 +230,7 @@ const ScrollSection = () => {
                     </div>
                   </div>
                   {/* BUTTONS */}
-                  <div className=" col-span-2 w-full flex flex-col-reverse justify-center gap-3">
+                  <div className="col-span-3 md:col-span-2 w-full flex flex-col-reverse justify-center gap-3">
                     {buttonDetails.map((button, index) => (
                       <div key={index}>
                         <button
@@ -281,23 +275,25 @@ const ScrollSection = () => {
           <div className="hidden md:flex w-full items-start gap-20">
             <div className="w-full py-[45vh]">
               <div>
-                <ul>
-                  {models.map((model, index) => (
-                    <li key={index}>
-                      <ModelElement id={model.index}>
-                        <p className="text-xs sm:text-sm lg:text-base">
-                          {model.index}.
-                        </p>
-                        <h1 className="py-4 pl-4 text-theme font-heading text-4xl lg:text-5xl">
-                          {model.title}
-                        </h1>
-                        <p className="text-sm lg:text-base">
-                          {model.description}
-                        </p>
-                      </ModelElement>
-                    </li>
-                  ))}
-                </ul>
+                <Suspense fallback={<SkeletonBox height="200px" />}>
+                  <ul>
+                    {models.map((model, index) => (
+                      <li key={index}>
+                        <ModelElement id={model.index}>
+                          <p className="text-xs sm:text-sm lg:text-base">
+                            {model.index}.
+                          </p>
+                          <h1 className="py-4 pl-4 text-theme font-heading text-4xl lg:text-5xl">
+                            {model.title}
+                          </h1>
+                          <p className="text-sm lg:text-base">
+                            {model.description}
+                          </p>
+                        </ModelElement>
+                      </li>
+                    ))}
+                  </ul>
+                </Suspense>
               </div>
             </div>
             <div className="sticky top-0 flex h-screen w-full items-center">
@@ -375,13 +371,15 @@ const ScrollSection = () => {
                     animate="visible"
                     exit="exit"
                   >
-                    <ServiceCard
-                      imgUrl={service.img}
-                      index={service.index}
-                      title={service.title}
-                      description={service.description}
-                      link={service.link}
-                    />
+                    <Suspense fallback={<SkeletonBox height="300px" />}>
+                      <ServiceCard
+                        imgUrl={service.img}
+                        index={service.index}
+                        title={service.title}
+                        description={service.description}
+                        link={service.link}
+                      />
+                    </Suspense>
                   </motion.div>
                 </TabsContent>
               ))}

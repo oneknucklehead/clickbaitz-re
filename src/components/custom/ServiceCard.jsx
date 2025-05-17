@@ -19,7 +19,7 @@ const ServiceCard = ({ imgUrl, index, title, description, link }) => {
             <CardDescription className="text-black text-sm md:text-xl">
               {description}
             </CardDescription>
-            <div className="py-4">
+            {/* <div className="py-4">
               <Link
                 to={link}
                 className="hover:opacity-90 w-fit bg-yellow-200 text-black font-semibold flex gap-2 items-center py-1 md:py-2 px-2 md:px-4 rounded-lg"
@@ -54,7 +54,7 @@ const ServiceCard = ({ imgUrl, index, title, description, link }) => {
                   </svg>
                 </span>
               </Link>
-            </div>
+            </div> */}
           </CardHeader>
         </div>
 
