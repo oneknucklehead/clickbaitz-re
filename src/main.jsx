@@ -17,7 +17,7 @@ import Layout from "./components/custom/Layout";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
-const Services = lazy(() => import("./pages/Services"));
+// const Services = lazy(() => import("./pages/Services"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudy = lazy(() => import("./pages/CaseStudy"));
 const TermsAndCondition = lazy(() => import("./pages/TermsAndCondition"));

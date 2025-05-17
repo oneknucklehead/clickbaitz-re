@@ -1,7 +1,7 @@
-import img1 from "../assets/services/1.png";
-import img2 from "../assets/services/2.png";
-import img3 from "../assets/services/3.png";
-import img4 from "../assets/services/4.png";
+import img1 from "../assets/services/1.webp";
+import img2 from "../assets/services/2.webp";
+import img3 from "../assets/services/3.webp";
+import img4 from "../assets/services/4.webp";
 
 const services = [
     {

@@ -1,7 +1,7 @@
-import imgUrl1 from "../assets/reputation/pic1.jpg";
-import imgUrl2 from "../assets/reputation/pic2.jpg";
-import imgUrl3 from "../assets/reputation/pic1.JPG";
-import imgUrl4 from "../assets/reputation/pic2.JPG";
+import imgUrl1 from "../assets/reputation/pic1.webp";
+import imgUrl2 from "../assets/reputation/pic2.webp";
+import imgUrl3 from "../assets/reputation/pic1.webp";
+import imgUrl4 from "../assets/reputation/pic2.webp";
 const buttonDetails = [
     {
         index: 4,

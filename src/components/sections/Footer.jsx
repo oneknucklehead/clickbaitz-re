@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-import pic1 from "../../assets/footer1.jpg";
-import pic2 from "../../assets/footer2.jpg";
+import pic1 from "../../assets/footer1.webp";
+import pic2 from "../../assets/footer2.webp";
 import pdf from "../../assets/brochure.pdf";
 
 import { motion } from "framer-motion";
