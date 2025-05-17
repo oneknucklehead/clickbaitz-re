@@ -431,13 +431,13 @@ export default function CaseStudies() {
       </div>
 
       {/* ✅ Suspense for lazy-loaded Footer */}
-      <Suspense
+      {/* <Suspense
         fallback={
           <div className="text-white text-center py-8">Loading Footer...</div>
         }
       >
         <Footer />
-      </Suspense>
+      </Suspense> */}
     </div>
   );
 }

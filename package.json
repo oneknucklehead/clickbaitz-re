@@ -6,7 +6,7 @@
   "homepage": "https://oneknucklehead.github.io/clickbaitz-re/",
   "scripts": {
     "dev": "vite",
-    "predeploy": "npm run build",
+    "predeploy": "vite build",
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",

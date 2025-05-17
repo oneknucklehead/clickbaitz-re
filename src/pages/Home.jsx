@@ -24,7 +24,7 @@ const Home = () => {
       </div>
       <ScrollSection />
       <FAQSection />
-      <Footer></Footer>
+      {/* <Footer/> */}
     </div>
   );
 };

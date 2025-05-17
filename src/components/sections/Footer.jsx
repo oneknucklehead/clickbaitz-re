@@ -17,7 +17,7 @@ const Footer = () => {
         </div> */}
       <div className="gap-8 text-theme px-2 sm:px-4 xl:px-8 py-8 grid xl:grid-cols-2 w-full">
         <div className="flex flex-col gap-8">
-          <h1 className="text-4xl text-left md:text-center xl:text-left mb-4">
+          <h1 className="text-2xl sm:text-3xl xl:text-4xl  text-left md:text-center xl:text-left ">
             We connect with ambitious brands and people.
           </h1>
           <div className="flex md:justify-center xl:justify-start my-12">
@@ -68,19 +68,30 @@ const Footer = () => {
                 <h2 className="text-xs md:text-sm font-light pb-1">
                   Interested in working with us?
                 </h2>
-                <Link
+                {/* <Link
                   to="/call"
                   className="font-semibold border-theme transition-all pb-3 border-b-2 text-base md:text-xl"
                 >
                   Book a call
-                </Link>
+                </Link> */}
+                <button
+                  onClick={() => {
+                    window.Calendly.initPopupWidget({
+                      url: "https://calendly.com/zohebcool1542/demo",
+                    });
+                  }}
+                  className="font-semibold border-theme transition-all pb-3 border-b-2 text-base md:text-xl"
+                >
+                  {/* Text for large screens */}
+                  <span className="">Book a Call</span>
+                </button>
               </li>
               <li>
                 <h2 className="text-xs md:text-sm font-light pb-1">
                   Who we are?
                 </h2>
                 <Link
-                  to={"/careers"}
+                  to={"/about"}
                   className="font-semibold border-theme border-opacity-100 pb-3 border-b-2  text-base md:text-xl"
                 >
                   More about us

@@ -167,7 +167,7 @@ const CaseStudy = () => {
           {console.log("faqs: " + study.studies)}
         </div>
       </div>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 };

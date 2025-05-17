@@ -52,7 +52,7 @@ const About = () => {
   };
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-[#0d0d0d] text-white">
       <div>
         <Nav />
       </div>
@@ -148,7 +148,7 @@ const About = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -12,6 +12,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import Services from "./pages/Services";
 // import PaymentPolicy from "./pages/PaymentPolicy";
 import ErrorBoundary from "./components/custom/ErrorBoundary";
+import Layout from "./components/custom/Layout";
 // import PrivPolicy from "./pages/PrivPolicy";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -22,50 +23,84 @@ const CaseStudy = lazy(() => import("./pages/CaseStudy"));
 const TermsAndCondition = lazy(() => import("./pages/TermsAndCondition"));
 const PrivPolicy = lazy(() => import("./pages/PrivPolicy"));
 const PaymentPolicy = lazy(() => import("./pages/PaymentPolicy"));
+const Error = lazy(() => import("./pages/Error"));
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/services",
-    element: <Services />,
-  },
-  {
-    path: "/case-studies",
-    element: <CaseStudies />,
-  },
-  {
-    path: "/case-studies/:caseStudy",
-    element: <CaseStudy />,
-  },
-  {
-    path: "/terms-and-condition",
-    element: <TermsAndCondition />,
-  },
-  {
-    path: "/privacy-policy",
-    element: <PrivPolicy />,
-  },
-  {
-    path: "/payment-policy",
-    element: <PaymentPolicy />,
-  },
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Home />,
+//   },
+//   {
+//     path: "/about",
+//     element: <About />,
+//   },
+//   {
+//     path: "/case-studies",
+//     element: <CaseStudies />,
+//   },
+//   {
+//     path: "/case-studies/:caseStudy",
+//     element: <CaseStudy />,
+//   },
+//   {
+//     path: "/terms-and-condition",
+//     element: <TermsAndCondition />,
+//   },
+//   {
+//     path: "/privacy-policy",
+//     element: <PrivPolicy />,
+//   },
+//   {
+//     path: "/payment-policy",
+//     element: <PaymentPolicy />,
+//   },
 
+//   {
+//     path: "*",
+//     element: <Error />,
+//   },
+//   {
+//     path: "/error",
+//     element: <Error />,
+//   },
+// ]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "about", element: <About /> },
+        { path: "*", element: <Error /> },
+        { path: "error", element: <Error /> },
+        {
+          path: "case-studies",
+          element: <CaseStudies />,
+        },
+        {
+          path: "case-studies/:caseStudy",
+          element: <CaseStudy />,
+        },
+        {
+          path: "terms-and-condition",
+          element: <TermsAndCondition />,
+        },
+        {
+          path: "privacy-policy",
+          element: <PrivPolicy />,
+        },
+        {
+          path: "payment-policy",
+          element: <PaymentPolicy />,
+        },
+      ],
+    },
+  ],
   {
-    path: "*",
-    element: <Error />,
-  },
-  {
-    path: "/error",
-    element: <Error />,
-  },
-]);
+    basename: "/clickbaitz-re", // 👈 important
+  }
+);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ErrorBoundary>
