@@ -121,10 +121,10 @@ const ScrollSection = () => {
       <div className="col-span-12 xl:col-span-10">
         <div className="py-24 px-2 sm:px-4 xl:px-8 w-full" id="reputation">
           <h1 className="text-4xl lg:text-5xl text-theme">
-            Lorem ipsum dolor sit amet
+            Building Trust, Elevating Impact:
           </h1>
           <h3 className="text-3xl lg:text-4xl py-2 lg:py-4 font-light">
-            drive business growth.
+            Your Reputation, Our Commitment.
           </h3>
           <div className="h-full">
             <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-2 gap-12">
@@ -263,10 +263,10 @@ const ScrollSection = () => {
         >
           <div>
             <h1 className="text-4xl lg:text-5xl  text-theme">
-              Lorem ipsum dolor sit amet,
+              Innovative Models,
             </h1>
             <h1 className="text-4xl lg:text-5xl  text-theme">
-              consectetur adipiscing.
+              Exceptional Results.
             </h1>
             <h3 className="text-3xl lg:text-4xl py-2 lg:py-4 font-light">
               Go beyond simple media buying.
