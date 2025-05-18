@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const ServiceCard = ({ imgUrl, index, title, description, link }) => {
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -22,7 +23,7 @@ const ServiceCard = ({ imgUrl, index, title, description, link }) => {
             </CardDescription>
 
             {/* Learn More Link */}
-            {link && (
+            {/* {link && (
               <div className="py-4">
                 <Link
                   to={link}
@@ -59,7 +60,7 @@ const ServiceCard = ({ imgUrl, index, title, description, link }) => {
                   </span>
                 </Link>
               </div>
-            )}
+            )} */}
           </CardHeader>
         </div>
 
@@ -72,12 +73,13 @@ const ServiceCard = ({ imgUrl, index, title, description, link }) => {
           <div className="absolute h-full w-full max-w-[200px] md:max-w-[400px] lg:max-w-[450px] bg-yellow-200 rounded-lg sm:translate-x-2 translate-y-2 shadow-lg"></div>
 
           {/* Skeleton Loader */}
+          {/* Skeleton Loader */}
           {!imgLoaded && (
-            <div className="relative h-[200px] md:h-[300px] lg:h-[350px] w-full max-w-[300px] md:max-w-[400px] lg:max-w-[450px] bg-gray-300 animate-pulse rounded-lg shadow-2xl"></div>
+            <div className="absolute top-0 left-0 h-full w-full max-w-[300px] md:max-w-[400px] lg:max-w-[450px] bg-gray-300 animate-pulse rounded-lg shadow-2xl z-10"></div>
           )}
 
           {/* Lazy Loaded Image */}
-          <img
+          <motion.img
             src={imgUrl}
             alt={title}
             loading="lazy"

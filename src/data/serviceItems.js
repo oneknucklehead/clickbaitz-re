@@ -16,8 +16,8 @@ const services = [
     {
         index: "02",
         id: "webDesignAndDevelopment",
-        title: "Website Design and Development",
-        description: "We create visually stunning and highly functional websites that serve as the digital face of your brand. Our designs prioritize user experience, ensuring seamless navigation and engagement, while our development process incorporates the latest technologies to keep your site ahead of the curve.",
+        title: "Web Design/Development, App Design/Development and smart CRM solutions",
+        description: "We create visually stunning and highly functional websites/app that serve as the digital face of your brand. Our designs prioritize user experience, ensuring seamless navigation and engagement, while our development process incorporates the latest technologies to keep your site/app ahead of the curve.",
         pricing: "Starts at $3000/mo",
         link: "/services/amazon-management",
         img: img2

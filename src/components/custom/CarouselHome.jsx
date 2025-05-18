@@ -6,7 +6,6 @@ import { SliderCaseStudy } from "./SliderCaseStudy";
 import MarqueeItem from "./MarqueeItem";
 import marqueeItems from "@/data/Marquee";
 import { motion, AnimatePresence } from "framer-motion";
-import { PopupButton } from "react-calendly";
 
 const CarouselHome = ({ navbarHeight }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -60,7 +59,7 @@ const CarouselHome = ({ navbarHeight }) => {
           {!imageLoaded && (
             <div className="w-full h-full bg-gray-950 animate-pulse absolute top-0 left-0 z-10" />
           )}
-          <img
+          <motion.img
             src={currentSlide.image}
             alt={`slide-${currentSlide.id}`}
             loading="lazy"

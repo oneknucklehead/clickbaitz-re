@@ -31,9 +31,13 @@ const FAQSection = () => {
               </li>
             ))}
           </ul>
-          {/* Optional Call to Action */}
-          <Link
-            to={"/call"}
+
+          <button
+            onClick={() => {
+              window.Calendly.initPopupWidget({
+                url: "https://calendly.com/zohebcool1542/demo",
+              });
+            }}
             className="hover:opacity-90 w-fit bg-theme my-8 text-black font-semibold flex gap-2 items-center py-1 md:py-2 px-2 md:px-4 rounded-lg"
           >
             <p className="text-sm md:text-base">Book a call</p>
@@ -65,7 +69,7 @@ const FAQSection = () => {
                 />
               </svg>
             </span>
-          </Link>
+          </button>
         </div>
 
         {/* Right hand side: Selected Question and Answer */}

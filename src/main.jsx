@@ -13,6 +13,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import PaymentPolicy from "./pages/PaymentPolicy";
 import ErrorBoundary from "./components/custom/ErrorBoundary";
 import Layout from "./components/custom/Layout";
+import Loading from "./pages/Loading";
 // import PrivPolicy from "./pages/PrivPolicy";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -104,7 +105,7 @@ const router = createBrowserRouter(
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ErrorBoundary>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading />}>
         <RouterProvider router={router} />
       </Suspense>
     </ErrorBoundary>

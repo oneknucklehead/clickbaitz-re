@@ -86,7 +86,7 @@ const ScrollSection = () => {
             activeClass="font-semibold border-l-2 transition-all pl-2 border-transparent border-theme"
             spy={true}
             smooth={true}
-            duration={500}
+            duration={100}
           >
             Our Reputation
           </LinkScroll>
@@ -98,7 +98,7 @@ const ScrollSection = () => {
             activeClass="font-semibold border-l-2 transition-all pl-2 border-transparent border-theme"
             spy={true}
             smooth={true}
-            duration={500}
+            duration={100}
           >
             Our Model
           </LinkScroll>
@@ -110,7 +110,7 @@ const ScrollSection = () => {
             activeClass="font-semibold border-l-2 transition-all pl-2 border-transparent border-theme"
             spy={true}
             smooth={true}
-            duration={500}
+            duration={100}
           >
             Our Services
           </LinkScroll>
@@ -152,7 +152,7 @@ const ScrollSection = () => {
                   </p>
                 </div>
                 <div className="my-2">
-                  <button className="bg-theme text-black font-semibold flex gap-2 items-center py-1 md:py-2 px-3 md:px-4 rounded-lg">
+                  <button className="bg-theme text-black font-semibold flex gap-2 items-center py-2 md:py-2 px-3 md:px-4 rounded-lg">
                     <Link to={"/case-studies"} className="text-xs md:text-base">
                       See examples of our works
                     </Link>
