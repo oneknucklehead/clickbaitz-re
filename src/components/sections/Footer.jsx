@@ -61,112 +61,49 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="">
-          <div className="block md:hidden xl:block">
-            <ul className="space-y-12">
-              <li>
-                <h2 className="text-xs md:text-sm font-light pb-1">
-                  Interested in working with us?
-                </h2>
-                {/* <Link
+        <div className="block">
+          <ul className="space-y-12 md:space-y-0 xl:space-y-12 md:flex justify-around flex-wrap gap-8 xl:block">
+            <li className="flex justify-start items-start md:justify-center xl:justify-start md:items-center xl:items-start flex-col">
+              <h2 className="text-xs md:text-sm font-light pb-1">
+                Interested in working with us?
+              </h2>
+              {/* <Link
                   to="/call"
                   className="font-semibold border-theme transition-all pb-3 border-b-2 text-base md:text-xl"
                 >
                   Book a call
                 </Link> */}
-                <button
-                  onClick={() => {
-                    window.Calendly.initPopupWidget({
-                      url: "https://calendly.com/zohebcool1542/demo",
-                    });
-                  }}
-                  className="font-semibold border-theme transition-all pb-3 border-b-2 text-base md:text-xl"
-                >
-                  {/* Text for large screens */}
-                  <span className="">Book a Call</span>
-                </button>
-              </li>
-              <li>
-                <h2 className="text-xs md:text-sm font-light pb-1">
-                  Who we are?
-                </h2>
-                <Link
-                  to={"/about"}
-                  className="font-semibold border-theme border-opacity-100 pb-3 border-b-2  text-base md:text-xl"
-                >
-                  More about us
-                </Link>
-              </li>
-              {/* <li>
+              <button
+                onClick={() => {
+                  window.Calendly.initPopupWidget({
+                    url: "https://calendly.com/zohebcool1542/demo",
+                  });
+                }}
+                className="font-semibold border-theme transition-all pb-3 border-b-2 text-base md:text-xl"
+              >
+                {/* Text for large screens */}
+                <span className="">Book a Call</span>
+              </button>
+            </li>
+            <li className="flex justify-start items-start md:justify-center xl:justify-start md:items-center xl:items-start flex-col">
+              <h2 className=" text-xs md:text-sm font-light pb-1">
+                Who we are?
+              </h2>
+              <Link
+                to={"/about"}
+                className="font-semibold border-theme border-opacity-100 pb-3 border-b-2  text-base md:text-xl"
+              >
+                More about us
+              </Link>
+            </li>
+            {/* <li>
                 <DownloadButton fileUrl={pdf} fileName={"Brochure.pdf"} />
               </li> */}
-            </ul>
-          </div>
-          <div className=" hidden md:flex justify-around gap-8 xl:hidden">
-            <ul className="space-y-12">
-              <li>
-                <h2 className="text-xs md:text-sm font-light pb-1">
-                  Interested in working with us?
-                </h2>
-                <Link
-                  to="/call"
-                  className="font-semibold border-theme transition-all pb-3 border-b-2  text-base md:text-xl"
-                >
-                  Schedule a meeting with us
-                </Link>
-              </li>
-              <li>
-                <h2 className="text-xs md:text-sm font-light pb-1">
-                  Want to join the team?
-                </h2>
-                <Link
-                  to={"/careers"}
-                  className="font-semibold border-theme border-opacity-100 pb-3 border-b-2  text-base md:text-xl"
-                >
-                  Learn about joining the Darkside
-                </Link>
-              </li>
-            </ul>
-            <ul className="space-y-12">
-              <li>
-                <h2 className="text-xs md:text-sm font-light pb-1">
-                  Fundraising for your startup?
-                </h2>
-                <Link
-                  to={"/about-us"}
-                  className="font-semibold border-theme border-opacity-100 pb-3 border-b-2  text-base md:text-xl"
-                >
-                  Learn about Darkmatter
-                </Link>
-              </li>
-              <li>
-                <h2 className="text-xs md:text-sm font-light pb-1">
-                  Want to level up your career?
-                </h2>
-                <Link
-                  to={"/dont-know"}
-                  className="font-semibold border-theme border-opacity-100 pb-3 border-b-2  text-base md:text-xl"
-                >
-                  Learn about our University
-                </Link>
-              </li>
-              <li>
-                <h2 className="text-xs md:text-sm font-light pb-1">
-                  Want to level up your career?
-                </h2>
-                <Link
-                  to={"/dont-know"}
-                  className="font-semibold border-theme border-opacity-100 pb-3 border-b-2  text-base md:text-xl"
-                >
-                  Learn about our University
-                </Link>
-              </li>
-            </ul>
-          </div>
+          </ul>
         </div>
       </div>
 
-      <div className="gap-8 items-center text-theme px-2 sm:px-4 xl:px-8 py-24 xl:py-8 grid  lg:grid-cols-2 w-full">
+      <div className="gap-8 items-center text-theme px-2 sm:px-4 xl:px-8 xl:py-8 grid  xl:grid-cols-2 w-full">
         <div className="block md:flex xl:block justify-around items-center flex-col">
           <p className="text-xs md:text-sm font-light">Email us at:</p>
           <a
@@ -188,7 +125,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-theme flex flex-wrap justify-around xl:justify-between items-center px-2 sm:px-4 xl:px-8 text-sm">
-        <div className="flex my-3 justify-center items-center w-full md:w-auto space-x-4">
+        <div className="flex my-3 text-center justify-center items-center w-full md:w-auto space-x-4">
           <Link
             to={"/terms-and-condition"}
             className="text-xs md:text-sm opacity-50 hover:opacity-100 transition-all duration-200"

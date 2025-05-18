@@ -8,7 +8,7 @@ const AccordionItem = ({ title, content }) => {
   return (
     <div className="border-b-2 border-white/10 overflow-hidden">
       <button
-        className={`w-full flex items-center text-theme justify-between p-4 text-left text-lg font-medium ${
+        className={`w-full flex capitalize items-center text-theme justify-between p-4 text-left text-lg font-medium ${
           isOpen ? "bg-[#201f1f]" : "bg-none"
         } hover:bg-[#201f1f] transition`}
         onClick={() => setIsOpen(!isOpen)}
@@ -57,7 +57,7 @@ const AccordionItem = ({ title, content }) => {
 
 const Accordion = ({ items }) => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 ">
       {items.map((item, idx) => (
         <AccordionItem key={idx} title={item.title} content={item.content} />
       ))}

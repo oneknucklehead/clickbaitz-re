@@ -1,5 +1,3 @@
-import Navbar from "@/components/custom/Navbar";
-import Footer from "@/components/sections/Footer";
 import caseStudyData from "@/data/caseStudies";
 import { useLayoutEffect, useRef, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
@@ -20,7 +18,6 @@ const CaseStudy = () => {
   const [navbarHeight, setNavbarHeight] = useState(80);
 
   const navbarRef = useRef(null);
-  const upperMarquee = [img1, img2, img3, img4, img5, img6];
   useLayoutEffect(() => {
     if (navbarRef.current) {
       setNavbarHeight(navbarRef.current.clientHeight);
@@ -34,8 +31,6 @@ const CaseStudy = () => {
   console.log(study);
 
   const [selected, setSelected] = useState("Problem");
-  // console.log("selected:");
-  // console.log(selected);
 
   const handleSelection = (option) => {
     setSelected(option);
@@ -54,10 +49,10 @@ const CaseStudy = () => {
       <Nav />
       <div className="max-w-screen-2xl mx-auto px-4 lg:px-16 py-24">
         <div className="grid lg:grid-cols-2 gap-8 m-10">
-          <motion.h1 className=" col-span-1 flex items-center justify-center lg:justify-end text-6xl font-semibold text-theme">
+          <motion.h1 className=" col-span-1 flex items-center justify-center text-center lg:text-right lg:justify-end text-6xl font-semibold text-theme">
             {caseStudyData[caseStudy].name}
           </motion.h1>
-          <motion.p className="text-white text-center lg:text-start text-lg lg:max-w-xl">
+          <motion.p className=" text-white text-center lg:text-start text-sm md:text-lg lg:max-w-xl">
             {caseStudyData[caseStudy].description}
           </motion.p>
         </div>
@@ -164,10 +159,8 @@ const CaseStudy = () => {
         </div>
         <div className="block lg:hidden">
           <Accordion items={study.studies} />
-          {console.log("faqs: " + study.studies)}
         </div>
       </div>
-      {/* <Footer></Footer> */}
     </div>
   );
 };
