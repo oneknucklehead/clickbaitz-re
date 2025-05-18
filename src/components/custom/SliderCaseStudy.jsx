@@ -13,6 +13,19 @@ import { Link } from "react-router-dom";
 import caseStudies from "@/data/homeCaseStudy";
 
 export function SliderCaseStudy() {
+  const truncateWordsSafe = (str, maxLength = 100) => {
+    if (str.length <= maxLength) return str;
+
+    const words = str.split(" ");
+    let result = "";
+
+    for (let word of words) {
+      if ((result + word).length + 1 > maxLength) break;
+      result += word + " ";
+    }
+
+    return result.trim() + "...";
+  };
   return (
     <Carousel
       plugins={[
@@ -33,7 +46,9 @@ export function SliderCaseStudy() {
               <Card className="bg-theme mb-2">
                 <CardContent className="flex md:gap-2 flex-col p-4 md:p-6">
                   <p className="text-lg md:text-2xl font-semibold">{title}</p>
-                  <p className="text-xs md:text-base">{description}</p>
+                  <p className="text-xs md:text-base">
+                    {truncateWordsSafe(description, 120)}
+                  </p>
                 </CardContent>
               </Card>
 
