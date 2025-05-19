@@ -1,0 +1,2 @@
+import{j as s,x as a,y as e,D as i}from"./index-CAoqpw8t.js";const t=()=>s.jsxs("div",{className:`w-full mx-auto flex items-center justify-between md:justify-start gap-12 py-4 px-4 lg:px-8 bg-[#0d0d0d]\r
+      `,children:[s.jsx("a",{href:"/",children:s.jsx("img",{src:a,className:"h-[35px]",alt:"Clickbaitz Logo"})}),s.jsx("div",{className:"hidden md:block",children:s.jsx(e,{})}),s.jsx("div",{className:"block md:hidden",children:s.jsx(i,{})})]});t.displayName="Navbar";export{t as default};
