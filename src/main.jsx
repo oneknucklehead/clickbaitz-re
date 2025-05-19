@@ -14,6 +14,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorBoundary from "./components/custom/ErrorBoundary";
 import Layout from "./components/custom/Layout";
 import Loading from "./pages/Loading";
+import Contact from "./pages/Contact";
 // import PrivPolicy from "./pages/PrivPolicy";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -94,6 +95,10 @@ const router = createBrowserRouter(
         {
           path: "payment-policy",
           element: <PaymentPolicy />,
+        },
+        {
+          path: "call",
+          element: <Contact />,
         },
       ],
     },

@@ -6,6 +6,7 @@ import { SliderCaseStudy } from "./SliderCaseStudy";
 import MarqueeItem from "./MarqueeItem";
 import marqueeItems from "@/data/Marquee";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const CarouselHome = ({ navbarHeight }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,6 +36,22 @@ const CarouselHome = ({ navbarHeight }) => {
     enter: { opacity: 0 },
     center: { opacity: 1 },
     exit: { opacity: 0 },
+  };
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
+  const openCalendly = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/zohebcool1542/demo",
+      });
+    } else {
+      console.warn("Calendly script not loaded.");
+    }
   };
 
   return (
@@ -126,15 +143,11 @@ const CarouselHome = ({ navbarHeight }) => {
               </div>
             </div>
             <div className="block lg:hidden w-fit h-fit absolute bottom-10 right-10">
-              <button
-                onClick={() => {
-                  window.Calendly.initPopupWidget({
-                    url: "https://calendly.com/zohebcool1542/demo",
-                  });
-                }}
+              <Link
+                to="/call"
                 className="flex  gap-2 bg-theme p-4 rounded-full items-center"
               >
-                {/* Icon for small screens */}
+                {" "}
                 <span className="block">
                   <svg
                     width="19"
@@ -149,12 +162,10 @@ const CarouselHome = ({ navbarHeight }) => {
                     />
                   </svg>
                 </span>
-
-                {/* Text for large screens */}
                 <span className="hidden lg:block text-sm md:text-lg lg:text-xl font-semibold">
                   Book a Call
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
           <div className="col-span-1 hidden lg:flex flex-wrap py-5 lg:flex-col justify-end lg:justify-between items-center lg:items-end gap-4 lg:gap-8">
@@ -166,15 +177,13 @@ const CarouselHome = ({ navbarHeight }) => {
             </div>
             <div>
               <div className="flex justify-end my-3 md:my-6">
-                <button
-                  onClick={() => {
-                    window.Calendly.initPopupWidget({
-                      url: "https://calendly.com/zohebcool1542/demo",
-                    });
-                  }}
-                  className="w-fit bg-theme flex gap-4 items-center py-3 px-4 lg:py-4 lg:px-6 rounded-full"
+                {/* <iframe allow="payment" style={{ display: "none" }}></iframe> */}
+
+                <Link
+                  to="/call"
+                  className="flex  gap-2 bg-theme p-4 rounded-full items-center"
                 >
-                  {/* Icon for small screens */}
+                  {" "}
                   <span className="block">
                     <svg
                       width="19"
@@ -189,12 +198,10 @@ const CarouselHome = ({ navbarHeight }) => {
                       />
                     </svg>
                   </span>
-
-                  {/* Text for large screens */}
                   <span className="hidden lg:block text-sm md:text-lg lg:text-xl font-semibold">
                     Book a Call
                   </span>
-                </button>
+                </Link>
               </div>
 
               <div className="hidden lg:block">

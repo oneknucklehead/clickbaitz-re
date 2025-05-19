@@ -67,13 +67,13 @@ const Footer = () => {
               <h2 className="text-xs md:text-sm font-light pb-1">
                 Interested in working with us?
               </h2>
-              {/* <Link
-                  to="/call"
-                  className="font-semibold border-theme transition-all pb-3 border-b-2 text-base md:text-xl"
-                >
-                  Book a call
-                </Link> */}
-              <button
+              <Link
+                to="/call"
+                className="font-semibold border-theme transition-all pb-3 border-b-2 text-base md:text-xl"
+              >
+                Book a call
+              </Link>
+              {/* <button
                 onClick={() => {
                   window.Calendly.initPopupWidget({
                     url: "https://calendly.com/zohebcool1542/demo",
@@ -81,9 +81,8 @@ const Footer = () => {
                 }}
                 className="font-semibold border-theme transition-all pb-3 border-b-2 text-base md:text-xl"
               >
-                {/* Text for large screens */}
                 <span className="">Book a Call</span>
-              </button>
+              </button> */}
             </li>
             <li className="flex justify-start items-start md:justify-center xl:justify-start md:items-center xl:items-start flex-col">
               <h2 className=" text-xs md:text-sm font-light pb-1">

@@ -41,6 +41,7 @@ export function DrawerComponent() {
       // subOptions: ["Our Ecosystem", "Our Thesis", "Darkmatter"],
     },
     { name: "Case Studies", link: "/case-studies" },
+    { name: "Book an Intro", link: "/call" },
     // { name: "Services", link: "/services" },
   ];
 

@@ -108,11 +108,11 @@ export function NavigationMenuComponent() {
             </ul>
           </NavigationMenuContent> */}
         </NavigationMenuItem>
-        {/* <NavigationMenuItem>
-          <Link to={"/services"}>
-            <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+        <NavigationMenuItem>
+          <Link to={"/call"}>
+            <NavigationMenuTrigger>Book an Intro</NavigationMenuTrigger>
           </Link>
-        </NavigationMenuItem> */}
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );
