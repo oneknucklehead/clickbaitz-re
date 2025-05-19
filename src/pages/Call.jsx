@@ -117,7 +117,7 @@ export default function Call() {
                   "Send Message"
                 )}
               </button>
-              <p className="text-sm mt-3 text-white">{result}</p>
+              <p className="text-sm mt-3 text-center text-white">{result}</p>
             </motion.div>
           ) : (
             <motion.div
