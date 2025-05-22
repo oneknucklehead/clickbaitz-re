@@ -4,7 +4,7 @@ const AboutGridItems = ({ tagBehind = null, title, description }) => {
   return (
     <div className="relative py-16 px-4 grid h-full lg:grid-cols-2">
       {tagBehind && (
-        <div className="uppercase absolute text-[22vw] lg:text-[15vw] font-bold text-white opacity-10 inset-0 flex items-center justify-center">
+        <div className="uppercase absolute text-[22vw] lg:text-[15vw] font-bold text-white opacity-5 inset-0 flex items-center justify-center">
           {tagBehind}
         </div>
       )}
