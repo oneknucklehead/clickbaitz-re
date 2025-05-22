@@ -113,7 +113,25 @@ const Footer = () => {
           </a>
         </div>
         <div className="block md:flex xl:block justify-around items-center flex-col">
-          <p className="text-xs md:text-sm font-light">Stationed at:</p>
+          <p className="text-xs md:text-sm font-light flex gap-2 items-center">
+            Stationed at:
+            <a href="https://maps.app.goo.gl/GSYt6stLjTKyQKua7">
+              <span>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.1187 1.8813C12.1187 1.32902 11.671 0.881302 11.1187 0.881302H2.1187C1.56641 0.881302 1.1187 1.32902 1.1187 1.8813C1.1187 2.43359 1.56641 2.8813 2.1187 2.8813H10.1187V10.8813C10.1187 11.4336 10.5664 11.8813 11.1187 11.8813C11.671 11.8813 12.1187 11.4336 12.1187 10.8813V1.8813ZM1 12L1.70711 12.7071L11.8258 2.58841L11.1187 1.8813L10.4116 1.1742L0.292893 11.2929L1 12Z"
+                    fill="#FDD034"
+                  />
+                </svg>
+              </span>
+            </a>
+          </p>
           <p className="mt-2 text-left md:text-center xl:text-left text-base md:text-lg">
             <b>Fatma Court</b>
             <br />

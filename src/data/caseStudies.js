@@ -24,10 +24,8 @@ import sacai7 from "../assets/case-studies/SacaiHomes/12.webp";
 // ARAAF IMPORT
 import mainimgaraaf2 from "../assets/case-studies/Araaf/main1.webp";
 import mainimgaraaf1 from "../assets/case-studies/Araaf/main2.webp";
-import araaf1 from "../assets/case-studies/Araaf/1.webp";
 import araaf2 from "../assets/case-studies/Araaf/2.webp";
 import araaf3 from "../assets/case-studies/Araaf/3.webp";
-import araaf4 from "../assets/case-studies/Araaf/4.webp";
 import araaf5 from "../assets/case-studies/Araaf/5.webp";
 import araaf6 from "../assets/case-studies/Araaf/6.webp";
 import araaf7 from "../assets/case-studies/Araaf/7.webp";
@@ -35,8 +33,6 @@ import araaf8 from "../assets/case-studies/Araaf/8.webp";
 import araaf9 from "../assets/case-studies/Araaf/9.webp";
 import araaf10 from "../assets/case-studies/Araaf/10.webp";
 import araaf11 from "../assets/case-studies/Araaf/11.webp";
-import araaf12 from "../assets/case-studies/Araaf/12.webp";
-import araaf13 from "../assets/case-studies/Araaf/13.webp";
 
 // NUR IMPORT
 import mainimgnur1 from "../assets/case-studies/Nur/main1.webp";
@@ -55,17 +51,9 @@ import nur9 from "../assets/case-studies/Nur/9.webp";
 import mainimgr1 from "../assets/case-studies/HouseofR/main1.webp";
 import mainimgr2 from "../assets/case-studies/HouseofR/main2.webp";
 import r1 from "../assets/case-studies/HouseofR/1.webp";
-import r2 from "../assets/case-studies/HouseofR/2.webp";
 import r3 from "../assets/case-studies/HouseofR/3.webp";
-import r4 from "../assets/case-studies/HouseofR/4.webp";
 import r5 from "../assets/case-studies/HouseofR/5.webp";
 import r6 from "../assets/case-studies/HouseofR/6.webp";
-import r7 from "../assets/case-studies/HouseofR/7.webp";
-import r8 from "../assets/case-studies/HouseofR/8.webp";
-import r9 from "../assets/case-studies/HouseofR/9.webp";
-import r10 from "../assets/case-studies/HouseofR/10.webp";
-import r11 from "../assets/case-studies/HouseofR/11.webp";
-import r12 from "../assets/case-studies/HouseofR/12.webp";
 
 // TFF IMPORT
 import mainimgtff1 from "../assets/case-studies/TFF/main1.webp";
@@ -183,10 +171,8 @@ const caseStudyData = {
       "Araaf Perfume is a non alcoholic perfume brand what has its manufacturing and production in India. They customise fragrances to your needs and provide you your signature scent which is unique to you.",
     images: [mainimgaraaf1, mainimgaraaf2],
     marqueeImgs: [
-      araaf1,
       araaf2,
       araaf3,
-      araaf4,
       araaf5,
       araaf6,
       araaf7,
@@ -194,8 +180,6 @@ const caseStudyData = {
       araaf9,
       araaf10,
       araaf11,
-      araaf12,
-      araaf13
     ],
     index: "03",
     tags: ["development", "marketing"],
@@ -257,7 +241,7 @@ const caseStudyData = {
       "House of R is a luxury fashion house which combines the traditional Indian silhouette with Morden patterns and styles. Their designs cater to the millennials and the gen Z’s  who are looking for something fresh and new with a hint of traditionalism.",
     images: [mainimgr1, mainimgr2],
     marqueeImgs: [
-      r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12
+      r1, r3, r5, r6
     ],
     index: "05",
     tags: ["branding", "Social media marketing", "PR"],

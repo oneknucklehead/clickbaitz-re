@@ -1,7 +1,9 @@
-import imgUrl1 from "../assets/reputation/pic1.webp";
-import imgUrl2 from "../assets/reputation/pic2.webp";
-import imgUrl3 from "../assets/reputation/pic1.webp";
-import imgUrl4 from "../assets/reputation/pic2.webp";
+import imgUrl1 from "../assets/reputation/Growth.webp";
+import imgUrl2 from "../assets/reputation/creativity.webp";
+import imgUrl3 from "../assets/reputation/conversion.webp";
+import imgUrl4 from "../assets/reputation/branding.webp";
+
+
 const buttonDetails = [
     {
         index: 4,

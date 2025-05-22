@@ -194,18 +194,18 @@ const ScrollSection = () => {
                     <div className="absolute flex justify-center items-center w-full h-full">
                       <img
                         src={image}
-                        className="rounded-lg absolute w-full h-full object-cover"
+                        className="rounded-lg absolute w-full h-full object-cover object-top"
                       />
                     </div>
                     <div className="absolute rounded-lg inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-70"></div>
 
                     {/* Content */}
-                    <div className="transition-all absolute inset-0 bottom-6 flex flex-col items-center justify-end px-6">
+                    {/* <div className="transition-all absolute inset-0 bottom-6 flex flex-col items-center justify-end px-6">
                       <p className="text-xs lg:text-base">{imageClientName}</p>
                       <h1 className="text-white text-center text-xl lg:text-3xl font-bold">
                         {imageClientWork}
                       </h1>
-                    </div>
+                    </div> */}
                     <div className="absolute top-0 w-full flex justify-between p-5">
                       <div className="">
                         <p>{imageIndex}.</p>

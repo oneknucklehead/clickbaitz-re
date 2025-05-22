@@ -117,9 +117,9 @@ const CarouselHome = ({ navbarHeight }) => {
                   </span>{" "}
                   experiences
                 </p>
-                <p className="py-3 text-sm sm:text-base lg:text-lg">
+                {/* <p className="py-3 text-sm sm:text-base lg:text-lg">
                   for ambitious companies since 2011.
-                </p>
+                </p> */}
                 <div className="text-theme text-base sm:text-lg lg:text-xl flex gap-2 items-center">
                   <a href="https://www.facebook.com/clickbaiitz">Facebook</a>
                   <p>
