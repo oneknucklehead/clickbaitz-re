@@ -44,16 +44,6 @@ const CarouselHome = ({ navbarHeight }) => {
     document.body.appendChild(script);
   }, []);
 
-  const openCalendly = () => {
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: "https://calendly.com/zohebcool1542/demo",
-      });
-    } else {
-      console.warn("Calendly script not loaded.");
-    }
-  };
-
   return (
     <div
       className={`relative w-full h-fit overflow-auto`}

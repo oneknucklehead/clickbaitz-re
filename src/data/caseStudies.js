@@ -316,11 +316,11 @@ const caseStudyData = {
     studies: [
       {
         title: "Problem",
-        content: "Damle Subh Lagan, a distinguished fashion suit brand celebrated for its traditional designs, was exclusively reliant on offline sales. In May 2023, the brand sought our agency’s expertise to establish a robust online presence and extend its market reach.",
+        content: "Damele Subh Lagan, a distinguished fashion suit brand celebrated for its traditional designs, was exclusively reliant on offline sales. In May 2023, the brand sought our agency’s expertise to establish a robust online presence and extend its market reach.",
       },
       {
         title: "Resolution",
-        content: "Our agency crafted and executed a strategic digital transformation plan for Damle Subh Lagan. We launched and optimized new social media profiles, developed compelling content, and orchestrated targeted digital campaigns to generate interest. In addition, we designed and implemented strategic advertisements to enhance online visibility and drive traffic to both the brand’s digital platforms and physical store.",
+        content: "Our agency crafted and executed a strategic digital transformation plan for Damele Subh Lagan. We launched and optimized new social media profiles, developed compelling content, and orchestrated targeted digital campaigns to generate interest. In addition, we designed and implemented strategic advertisements to enhance online visibility and drive traffic to both the brand’s digital platforms and physical store.",
       },
       {
         title: "Results",

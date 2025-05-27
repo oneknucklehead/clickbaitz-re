@@ -27,18 +27,7 @@ const RotatingText = () => {
         duration={100}
       >
         <div className="flex w-full justify-center xl:ml-14">
-          <div
-            className="circle md:ml-20 h-fit w-full"
-            //   data-aos="fade-up"
-            //   data-aos-duration="1000"
-            // data-aos-delay="200"
-          >
-            {/* <img
-            className="logo object-contain"
-            src={contactImg}
-            alt="coffee contact section"
-          ></img> */}
-
+          <div className="circle md:ml-20 h-fit w-full">
             <span className="hidden lg:block text-theme">
               <svg
                 width="40"
@@ -82,7 +71,7 @@ const RotatingText = () => {
               </svg>
             </span>
             <div className="text font-semibold">
-              <p className="text-white flex gap-10" ref={textRef}>
+              <p className="text-white gap-10" ref={textRef}>
                 <span className="pr-2">YOUR - </span>
                 <span>CREATIVE - </span>
                 <span>PARTNER - </span>
