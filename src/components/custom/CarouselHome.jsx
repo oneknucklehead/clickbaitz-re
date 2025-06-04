@@ -85,7 +85,7 @@ const CarouselHome = ({ navbarHeight }) => {
             alt={`slide-${currentSlide.id}`}
             loading="lazy"
             onLoad={() => setImageLoaded(true)}
-            className={`absolute brightness-50 top-0 left-0 w-full h-full object-cover rounded-b-lg transition-opacity duration-700 ${
+            className={`absolute brightness-50 grayscale top-0 left-0 w-full h-full object-cover rounded-b-lg transition-opacity duration-700 ${
               imageLoaded ? "opacity-100" : "opacity-0"
             }`}
           />

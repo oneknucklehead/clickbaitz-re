@@ -1,6 +1,6 @@
-import img1 from "../assets/pic1.webp";
-import img2 from "../assets/pic2.webp";
-import img3 from "../assets/pic3.webp";
+import img1 from "../assets/carousel/1.webp";
+import img2 from "../assets/carousel/2.webp";
+import img3 from "../assets/carousel/3.webp";
 
 const slides = [
     {

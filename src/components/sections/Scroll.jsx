@@ -210,7 +210,7 @@ const ScrollSection = () => {
                       <div className="">
                         <p>{imageIndex}.</p>
                       </div>
-                      <Link
+                      {/* <Link
                         to={imageLink}
                         className="border-2 p-2 rounded-full cursor-pointer"
                       >
@@ -226,7 +226,7 @@ const ScrollSection = () => {
                             fill="white"
                           />
                         </svg>
-                      </Link>
+                      </Link> */}
                     </div>
                   </div>
                   {/* BUTTONS */}

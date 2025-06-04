@@ -25,7 +25,7 @@ export default function Call() {
     setLoader(true);
     axios.defaults.headers.post["Content-Type"] = "application/json";
     axios
-      .post("https://formsubmit.co/ajax/your-email@example.com", form)
+      .post("https://formsubmit.co/ajax/haris@clickbaitz.com", form)
       .then(() => {
         setResult("✅ Message sent successfully!");
         setForm({ name: "", email: "", message: "" });
@@ -129,7 +129,7 @@ export default function Call() {
             >
               <div className="rounded-md">
                 <InlineWidget
-                  url="https://calendly.com/zohebcool1542/demo"
+                  url="https://calendly.com/clickbaitz/meeting"
                   styles={{ height: "800px", width: "100%" }}
                   pageSettings={{
                     backgroundColor: "0d0d0d",

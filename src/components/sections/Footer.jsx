@@ -1,12 +1,11 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-import pic1 from "../../assets/footer1.webp";
-import pic2 from "../../assets/footer2.webp";
-import pdf from "../../assets/brochure.pdf";
+import pic1 from "../../assets/team/1.webp";
+import pic2 from "../../assets/team/2.webp";
+import pic3 from "../../assets/team/3.webp";
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import DownloadButton from "../custom/DownloadBtn";
 
 const Footer = () => {
   return (
@@ -23,7 +22,7 @@ const Footer = () => {
           <div className="flex md:justify-center xl:justify-start my-12">
             <div className="relative w-40 h-40">
               <motion.img
-                src={pic1}
+                src={pic2}
                 className="w-40 h-40 absolute border-2 -rotate-1 border-white rounded-lg object-cover object-center"
                 alt="picture one"
                 initial={{ opacity: 0, x: 50, y: 50, zIndex: 1 }}
@@ -35,7 +34,7 @@ const Footer = () => {
                 }}
               />
               <motion.img
-                src={pic2}
+                src={pic3}
                 className="w-40 h-40 absolute border-2 border-white rounded-lg rotate-6 object-cover object-center"
                 alt="picture two"
                 initial={{ opacity: 0, y: 50, zIndex: 2 }}
