@@ -30,7 +30,7 @@ export function SliderCaseStudy() {
     <Carousel
       plugins={[
         Autoplay({
-          delay: 2000,
+          delay: 4000,
         }),
       ]}
       opts={{
@@ -54,12 +54,17 @@ export function SliderCaseStudy() {
 
               <div className="flex w-full items-center gap-4">
                 {/* <div className="text-lg bg-white rounded-md py-2 px-4"> */}
-                <Card className="text-xs md:text-base w-full text-center py-2">
-                  View full study
-                </Card>
+                <Link to={link} className="w-full">
+                  <Card className="text-xs md:text-base w-full text-center py-2">
+                    View full study
+                  </Card>
+                </Link>
                 {/* </div> */}
-                <Link to={link} className="bg-white rounded-full p-3 md:p-4">
-                  <span className="hidden md:block">
+                <Link
+                  to={link}
+                  className="bg-white rounded-full p-3 md:p-4 hover:-rotate-90 transition-all duration-300"
+                >
+                  <span className="hidden md:block ">
                     <svg
                       width="12"
                       height="12"

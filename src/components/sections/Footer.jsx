@@ -183,7 +183,9 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <p className="text-center text-xs">© ClickBaitz Agency 2024</p>
+      <p className="text-center text-xs">
+        © ClickBaitz Agency {new Date().getFullYear()}
+      </p>
     </div>
     // </div>
   );

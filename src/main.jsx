@@ -27,45 +27,6 @@ const PrivPolicy = lazy(() => import("./pages/PrivPolicy"));
 const PaymentPolicy = lazy(() => import("./pages/PaymentPolicy"));
 const Error = lazy(() => import("./pages/Error"));
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Home />,
-//   },
-//   {
-//     path: "/about",
-//     element: <About />,
-//   },
-//   {
-//     path: "/case-studies",
-//     element: <CaseStudies />,
-//   },
-//   {
-//     path: "/case-studies/:caseStudy",
-//     element: <CaseStudy />,
-//   },
-//   {
-//     path: "/terms-and-condition",
-//     element: <TermsAndCondition />,
-//   },
-//   {
-//     path: "/privacy-policy",
-//     element: <PrivPolicy />,
-//   },
-//   {
-//     path: "/payment-policy",
-//     element: <PaymentPolicy />,
-//   },
-
-//   {
-//     path: "*",
-//     element: <Error />,
-//   },
-//   {
-//     path: "/error",
-//     element: <Error />,
-//   },
-// ]);
 const router = createBrowserRouter(
   [
     {
@@ -104,7 +65,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/clickbaitz-re", // 👈 important
+    basename: "/clickbaitz-re",
   }
 );
 createRoot(document.getElementById("root")).render(

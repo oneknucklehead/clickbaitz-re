@@ -45,8 +45,8 @@ export default function Call() {
           onClick={() => setTab("form")}
           className={` px-4 md:px-6 py-2 text-sm md:text-base rounded-full font-semibold transition ${
             tab === "form"
-              ? "bg-yellow-400 text-black"
-              : "bg-white/5 hover:bg-white/10"
+              ? "bg-theme  hover:bg-[#e2c036] text-black transition-all duration-300"
+              : "bg-white/5 hover:bg-white/10  transition-all duration-300"
           }`}
         >
           Reach Us Out
@@ -102,7 +102,7 @@ export default function Call() {
               <button
                 onClick={handleSubmit}
                 disabled={loader}
-                className="bg-theme text-black w-full py-3 rounded-md font-semibold transition"
+                className="bg-theme  hover:bg-[#e2c036] text-black w-full py-3 rounded-md font-semibold transition-all duration-300"
               >
                 {loader ? (
                   <div className="flex justify-center">

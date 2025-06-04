@@ -393,17 +393,17 @@ export default function CaseStudies() {
                   </motion.p>
 
                   <motion.div
-                    className="flex items-center gap-2 mt-4 px-4 py-2 bg-theme w-fit font-semibold text-black rounded-lg cursor-pointer"
+                    className="flex group items-center gap-2 mt-4 px-4 py-2 bg-theme  hover:bg-[#e2c036] w-fit font-semibold text-black rounded-lg cursor-pointer"
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.3 }}
                   >
                     <Link
                       to={caseStudyData[selected].link}
-                      className="flex items-center gap-2"
+                      className="flex  items-center gap-2"
                     >
                       <p>Read more</p>
-                      <span>
+                      <span className=" rotate-45 group-hover:rotate-12 transition-all duration-300">
                         <svg
                           width="12"
                           height="12"

@@ -49,21 +49,23 @@ const FAQSection = () => {
 
           <Link
             to={"/call"}
-            className="hover:opacity-90 mt-6 w-fit bg-theme text-black font-semibold flex gap-2 items-center py-2 px-4 rounded-lg"
+            className="hover:opacity-90 group mt-6 w-fit bg-theme hover:bg-[#e2c036] transition-all duration-300 text-black font-semibold flex gap-2 items-center py-2 px-4 rounded-lg"
           >
             <p className="text-sm md:text-base">Book a call</p>
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.182 1.18201C11.182 0.629723 10.7343 0.182008 10.182 0.182008L1.18201 0.182007C0.629723 0.182007 0.182008 0.629722 0.182008 1.18201C0.182008 1.73429 0.629723 2.18201 1.18201 2.18201L9.18201 2.18201L9.18201 10.182C9.18201 10.7343 9.62972 11.182 10.182 11.182C10.7343 11.182 11.182 10.7343 11.182 10.182L11.182 1.18201ZM1.70711 11.0711L10.8891 1.88911L9.4749 0.474901L0.292893 9.65691L1.70711 11.0711Z"
-                fill="black"
-              />
-            </svg>
+            <span className="transition-all duration-300 rotate-45 group-hover:rotate-12">
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.182 1.18201C11.182 0.629723 10.7343 0.182008 10.182 0.182008L1.18201 0.182007C0.629723 0.182007 0.182008 0.629722 0.182008 1.18201C0.182008 1.73429 0.629723 2.18201 1.18201 2.18201L9.18201 2.18201L9.18201 10.182C9.18201 10.7343 9.62972 11.182 10.182 11.182C10.7343 11.182 11.182 10.7343 11.182 10.182L11.182 1.18201ZM1.70711 11.0711L10.8891 1.88911L9.4749 0.474901L0.292893 9.65691L1.70711 11.0711Z"
+                  fill="black"
+                />
+              </svg>
+            </span>
           </Link>
         </div>
 
@@ -93,21 +95,23 @@ const FAQSection = () => {
 
           <Link
             to={"/call"}
-            className="hover:opacity-90 w-fit bg-theme my-8 text-black font-semibold flex gap-2 items-center py-2 px-4 rounded-lg"
+            className="hover:opacity-90 group transition-all duration-300 w-fit bg-theme my-8 text-black font-semibold flex gap-2 items-center py-2 px-4 rounded-lg"
           >
             <p className="text-sm md:text-base">Book a call</p>
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.182 1.18201C11.182 0.629723 10.7343 0.182008 10.182 0.182008L1.18201 0.182007C0.629723 0.182007 0.182008 0.629722 0.182008 1.18201C0.182008 1.73429 0.629723 2.18201 1.18201 2.18201L9.18201 2.18201L9.18201 10.182C9.18201 10.7343 9.62972 11.182 10.182 11.182C10.7343 11.182 11.182 10.7343 11.182 10.182L11.182 1.18201ZM1.70711 11.0711L10.8891 1.88911L9.4749 0.474901L0.292893 9.65691L1.70711 11.0711Z"
-                fill="black"
-              />
-            </svg>
+            <span className="transition-all duration-300 rotate-45 group-hover:rotate-12">
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.182 1.18201C11.182 0.629723 10.7343 0.182008 10.182 0.182008L1.18201 0.182007C0.629723 0.182007 0.182008 0.629722 0.182008 1.18201C0.182008 1.73429 0.629723 2.18201 1.18201 2.18201L9.18201 2.18201L9.18201 10.182C9.18201 10.7343 9.62972 11.182 10.182 11.182C10.7343 11.182 11.182 10.7343 11.182 10.182L11.182 1.18201ZM1.70711 11.0711L10.8891 1.88911L9.4749 0.474901L0.292893 9.65691L1.70711 11.0711Z"
+                  fill="black"
+                />
+              </svg>
+            </span>
           </Link>
         </div>
 

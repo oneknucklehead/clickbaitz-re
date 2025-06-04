@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import slides from "@/data/homeImageBg";
 import Marquee from "./Marquee";
 import RotatingText from "./RotatingText";
@@ -9,6 +9,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const CarouselHome = ({ navbarHeight }) => {
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    if (textRef != null) {
+      textRef.current.innerHTML = textRef.current.innerText
+        .split("")
+        .map(
+          (char, i) =>
+            `<span style="transform:rotate(${i * 8.3}deg)">${char}</span>`
+        )
+        .join("");
+    }
+  }, []);
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -128,14 +142,82 @@ const CarouselHome = ({ navbarHeight }) => {
                   </a>
                 </div>
               </div>
-              <div className="col-span-1 hidden lg:flex justify-evenly items-center">
+              {/* <div className="col-span-1 hidden lg:flex justify-evenly items-center">
                 <RotatingText />
+              </div> */}
+              <div className="col-span-1 hidden lg:flex justify-evenly items-center">
+                <Link
+                  id="reputation-anchor"
+                  to="reputation"
+                  className="cursor-pointer"
+                  smooth={true}
+                  duration={100}
+                >
+                  <div className="flex w-full justify-center xl:ml-14">
+                    <div
+                      className="circle md:ml-20 h-fit w-full"
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      // data-aos-delay="200"
+                    >
+                      <span className="hidden lg:block text-theme">
+                        <svg
+                          width="40"
+                          height="40"
+                          viewBox="0 0 43 43"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.12132 0.87868C3.94975 -0.292893 2.05025 -0.292893 0.87868 0.87868C-0.292893 2.05025 -0.292893 3.94975 0.87868 5.12132L5.12132 0.87868ZM40 43C41.6568 43 43 41.6568 43 40L43 13C43 11.3431 41.6569 10 40 10C38.3431 10 37 11.3431 37 13V37H13C11.3431 37 10 38.3431 10 40C10 41.6569 11.3431 43 13 43L40 43ZM0.87868 5.12132L37.8787 42.1213L42.1213 37.8787L5.12132 0.87868L0.87868 5.12132Z"
+                            fill="#FDD034"
+                          />
+                        </svg>
+                      </span>
+                      <span className="hidden md:block lg:hidden text-theme">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 43 43"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.12132 0.87868C3.94975 -0.292893 2.05025 -0.292893 0.87868 0.87868C-0.292893 2.05025 -0.292893 3.94975 0.87868 5.12132L5.12132 0.87868ZM40 43C41.6568 43 43 41.6568 43 40L43 13C43 11.3431 41.6569 10 40 10C38.3431 10 37 11.3431 37 13V37H13C11.3431 37 10 38.3431 10 40C10 41.6569 11.3431 43 13 43L40 43ZM0.87868 5.12132L37.8787 42.1213L42.1213 37.8787L5.12132 0.87868L0.87868 5.12132Z"
+                            fill="#FDD034"
+                          />
+                        </svg>
+                      </span>
+                      <span className="block md:hidden text-theme">
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 43 43"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.12132 0.87868C3.94975 -0.292893 2.05025 -0.292893 0.87868 0.87868C-0.292893 2.05025 -0.292893 3.94975 0.87868 5.12132L5.12132 0.87868ZM40 43C41.6568 43 43 41.6568 43 40L43 13C43 11.3431 41.6569 10 40 10C38.3431 10 37 11.3431 37 13V37H13C11.3431 37 10 38.3431 10 40C10 41.6569 11.3431 43 13 43L40 43ZM0.87868 5.12132L37.8787 42.1213L42.1213 37.8787L5.12132 0.87868L0.87868 5.12132Z"
+                            fill="#FDD034"
+                          />
+                        </svg>
+                      </span>
+
+                      <div className="text font-semibold">
+                        <p className="text-white" ref={textRef}>
+                          Your - Creative - Partner -{" "}
+                          {/* Powering Ideas Into Impact */}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
               </div>
             </div>
             <div className="block lg:hidden w-fit h-fit absolute bottom-10 right-10">
               <Link
                 to="/call"
-                className="flex  gap-2 bg-theme p-4 rounded-full items-center"
+                className="flex  gap-2 bg-theme hover:bg-[#e2c036]  p-4 rounded-full items-center"
               >
                 {" "}
                 <span className="block">
@@ -171,7 +253,7 @@ const CarouselHome = ({ navbarHeight }) => {
 
                 <Link
                   to="/call"
-                  className="flex  gap-2 bg-theme p-4 rounded-full items-center"
+                  className="flex transition-all gap-2 bg-theme hover:bg-[#e2c036] p-4 rounded-full items-center"
                 >
                   {" "}
                   <span className="block">

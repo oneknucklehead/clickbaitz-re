@@ -71,7 +71,7 @@ const RotatingText = () => {
               </svg>
             </span>
             <div className="text font-semibold">
-              <p className="text-white gap-10" ref={textRef}>
+              <p className="text-white flex gap-10" ref={textRef}>
                 <span className="pr-2">YOUR - </span>
                 <span>CREATIVE - </span>
                 <span>PARTNER - </span>

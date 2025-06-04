@@ -152,11 +152,11 @@ const ScrollSection = () => {
                   </p>
                 </div>
                 <div className="my-2">
-                  <button className="bg-theme text-black font-semibold flex gap-2 items-center py-2 md:py-2 px-3 md:px-4 rounded-lg">
+                  <button className="bg-theme hover:bg-[#e2c036] transition-all duration-300 group text-black font-semibold flex gap-2 items-center py-2 md:py-2 px-3 md:px-4 rounded-lg">
                     <Link to={"/case-studies"} className="text-xs md:text-base">
                       See examples of our works
                     </Link>
-                    <span className="hidden md:block">
+                    <span className="hidden md:block rotate-45 group-hover:rotate-12 transition-all duration-300">
                       <svg
                         width="12"
                         height="12"
@@ -170,7 +170,7 @@ const ScrollSection = () => {
                         />
                       </svg>
                     </span>
-                    <span className="block md:hidden">
+                    <span className="block md:hidden rotate-45 group-hover:rotate-12 transition-all duration-300">
                       <svg
                         width="8"
                         height="8"
@@ -235,7 +235,7 @@ const ScrollSection = () => {
                       <div key={index}>
                         <button
                           onClick={() => handleMainImage(button)}
-                          className={`rounded-lg w-full p-3 md:p-4 lg:p-3 ${button.color} transition-all hover:opacity-90 text-black flex items-center gap-1 md:gap-2`}
+                          className={`rounded-lg w-full p-3 md:p-4 lg:p-3 ${button.color} transition-all duration-300 hover:opacity-85 text-black flex items-center gap-1 md:gap-2`}
                         >
                           <span
                             className="hidden md:block"
