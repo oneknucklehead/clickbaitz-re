@@ -11,17 +11,17 @@ import { Link } from "react-router-dom";
 const CarouselHome = ({ navbarHeight }) => {
   const textRef = useRef(null);
 
-  useEffect(() => {
-    if (textRef != null) {
-      textRef.current.innerHTML = textRef.current.innerText
-        .split("")
-        .map(
-          (char, i) =>
-            `<span style="transform:rotate(${i * 8.3}deg)">${char}</span>`
-        )
-        .join("");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (textRef != null) {
+  //     textRef.current.innerHTML = textRef.current.innerText
+  //       .split("")
+  //       .map(
+  //         (char, i) =>
+  //           `<span style="transform:rotate(${i * 8.3}deg)">${char}</span>`
+  //       )
+  //       .join("");
+  //   }
+  // }, []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -142,10 +142,13 @@ const CarouselHome = ({ navbarHeight }) => {
                   </a>
                 </div>
               </div>
-              {/* <div className="col-span-1 hidden lg:flex justify-evenly items-center">
-                <RotatingText />
-              </div> */}
               <div className="col-span-1 hidden lg:flex justify-evenly items-center">
+                <RotatingText
+                  text={"Your - Creative - Partner -"}
+                  radius={100}
+                />
+              </div>
+              {/* <div className="col-span-1 hidden lg:flex justify-evenly items-center">
                 <Link
                   id="reputation-anchor"
                   to="reputation"
@@ -158,7 +161,6 @@ const CarouselHome = ({ navbarHeight }) => {
                       className="circle md:ml-20 h-fit w-full"
                       data-aos="fade-up"
                       data-aos-duration="1000"
-                      // data-aos-delay="200"
                     >
                       <span className="hidden lg:block text-theme">
                         <svg
@@ -206,13 +208,12 @@ const CarouselHome = ({ navbarHeight }) => {
                       <div className="text font-semibold">
                         <p className="text-white" ref={textRef}>
                           Your - Creative - Partner -{" "}
-                          {/* Powering Ideas Into Impact */}
                         </p>
                       </div>
                     </div>
                   </div>
                 </Link>
-              </div>
+              </div> */}
             </div>
             <div className="block lg:hidden w-fit h-fit absolute bottom-10 right-10">
               <Link
