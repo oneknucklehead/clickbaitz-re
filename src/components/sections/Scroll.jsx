@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Suspense, lazy } from "react";
+
 import {
   Link as LinkScroll,
   Events,
@@ -15,10 +16,14 @@ import models from "@/data/models";
 
 import services from "@/data/serviceItems";
 import ModelElement from "../custom/ModelElement";
+import ServiceCarousel from "../custom/ServiceCarousel";
 import ServiceCard from "../custom/ServiceCard";
+import Services from "@/pages/Services";
+// import ServiceCard from "../custom/ServiceCard";
 
 // const ModelElement = lazy(() => import("../custom/ModelElement"));
 // const ServiceCard = lazy(() => import("../custom/ServiceCard"));
+
 const ScrollSection = () => {
   const [image, setImage] = useState(
     buttonDetails[buttonDetails.length - 1].img
@@ -348,7 +353,7 @@ const ScrollSection = () => {
           <h3 className="text-3xl lg:text-4xl py-2 lg:py-4 font-light">
             Core Services.
           </h3>
-          <div className="w-full py-8">
+          {/* <div className="w-full py-8">
             <Tabs defaultValue="creativeDesign">
               <div className="flex justify-center">
                 <TabsList className="bg-[#FDD034] text-black">
@@ -384,7 +389,8 @@ const ScrollSection = () => {
                 </TabsContent>
               ))}
             </Tabs>
-          </div>
+          </div> */}
+          <Services />
           {/* <div>
             <TabComponent />
           </div> */}

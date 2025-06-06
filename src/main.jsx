@@ -15,6 +15,7 @@ import ErrorBoundary from "./components/custom/ErrorBoundary";
 import Layout from "./components/custom/Layout";
 import Loading from "./pages/Loading";
 import Contact from "./pages/Contact";
+import Services from "./pages/Services";
 // import PrivPolicy from "./pages/PrivPolicy";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
       children: [
         { index: true, element: <Home /> },
         { path: "about", element: <About /> },
+        // { path: "services", element: <Services /> },
         { path: "*", element: <Error /> },
         { path: "error", element: <Error /> },
         {
