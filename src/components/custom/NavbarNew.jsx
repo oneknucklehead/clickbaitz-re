@@ -41,9 +41,9 @@ const Nav = () => {
           className={`flex w-full justify-between md:justify-start items-center gap-8 py-4  *:transition-colors *:duration-300`}
         >
           <div className="flex items-center gap-8">
-            <Link to={"/"}>
+            <a href={"/"}>
               <img src={logo} className="h-[35px]" alt="Clickbaitz Logo" />
-            </Link>
+            </a>
             <div className="hidden md:block">
               <NavigationMenuComponent></NavigationMenuComponent>
             </div>
