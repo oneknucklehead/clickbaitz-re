@@ -65,10 +65,10 @@ const router = createBrowserRouter(
         },
       ],
     },
-  ],
-  {
-    basename: "/clickbaitz-re",
-  }
+  ]
+  // {
+  //   basename: "/clickbaitz-re",
+  // }
 );
 createRoot(document.getElementById("root")).render(
   <StrictMode>
